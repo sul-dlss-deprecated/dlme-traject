@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative 'json_reader'
-require_relative 'dlme_json_resource_writer'
-require_relative 'macros/dlme'
-require_relative 'macros/extraction'
-require_relative 'macros/json'
+require 'json_reader'
+require 'dlme_json_resource_writer'
+require 'macros/dlme'
+require 'macros/extraction'
+require 'macros/json'
 
 extend Macros::DLME
 extend Macros::JSON

@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative 'csv_reader'
-require_relative 'dlme_json_resource_writer'
-require_relative 'macros/csv'
-require_relative 'macros/dlme'
-require_relative 'macros/extraction'
+require 'csv_reader'
+require 'dlme_json_resource_writer'
+require 'macros/csv'
+require 'macros/dlme'
+require 'macros/extraction'
 
 extend Macros::DLME
 extend Macros::Csv

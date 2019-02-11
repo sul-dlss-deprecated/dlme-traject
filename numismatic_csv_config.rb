@@ -2,12 +2,12 @@
 
 # Numismatics CSV Mapping Configuration
 
-require_relative 'csv_reader'
-require_relative 'dlme_json_resource_writer'
-require_relative 'macros/dlme'
-require_relative 'macros/extraction'
-require_relative 'macros/csv'
-require_relative 'macros/numismatic_csv'
+require 'csv_reader'
+require 'dlme_json_resource_writer'
+require 'macros/dlme'
+require 'macros/extraction'
+require 'macros/csv'
+require 'macros/numismatic_csv'
 extend Macros::DLME
 extend Macros::Csv
 extend Macros::NumismaticCsv
