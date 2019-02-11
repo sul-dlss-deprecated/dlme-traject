@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative 'xml_reader'
-require_relative 'dlme_json_resource_writer'
-require_relative 'macros/dlme'
-require_relative 'macros/extraction'
-require_relative 'macros/xml'
+require 'xml_reader'
+require 'dlme_json_resource_writer'
+require 'macros/dlme'
+require 'macros/extraction'
+require 'macros/xml'
 
 extend Macros::DLME
 extend Macros::Xml

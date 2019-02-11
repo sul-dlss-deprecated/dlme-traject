@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require_relative 'csv_reader'
-require_relative 'dlme_json_resource_writer'
-require_relative 'macros/dlme'
-require_relative 'macros/extraction'
-require_relative 'macros/met_csv'
-require_relative 'macros/csv'
+require 'csv_reader'
+require 'dlme_json_resource_writer'
+require 'macros/dlme'
+require 'macros/extraction'
+require 'macros/met_csv'
+require 'macros/csv'
 extend Macros::DLME
 extend Macros::Csv
 extend Macros::MetCsv
