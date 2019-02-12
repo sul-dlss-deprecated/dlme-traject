@@ -34,7 +34,7 @@ to_field 'agg_preview' do |record, accumulator, context|
 
   if iiif_json.present?
     accumulator << transform_values(context,
-                                    'wr_format' =>  extract_mods('/*/mods:physicalDescription/mods:internetMediaType'),
+                                    'wr_format' => extract_mods('/*/mods:physicalDescription/mods:internetMediaType'),
                                     'wr_has_service' => iiif_thumbnail_service(iiif_json),
                                     'wr_id' => literal(iiif_thumbnail_id(iiif_json)),
                                     'wr_is_referenced_by' => literal(manifest))
