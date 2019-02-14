@@ -37,7 +37,19 @@ to_field 'cho_subject', extract_xml("#{record}/dc:subject", LOC_NS), strip
 # Agg
 to_field 'agg_provider', provider
 to_field 'agg_data_provider', data_provider
-to_field 'agg_is_shown_at', extract_xml('srw:record/srw:extraRecordData/link', LOC_NS), strip
-to_field 'agg_preview', extract_xml('srw:record/srw:extraRecordData/thumbnail', LOC_NS), strip
+
+to_field 'agg_is_shown_at' do |_record, accumulator, context|
+  accumulator << transform_values(
+    context,
+    'wr_id' => [extract_xml('srw:record/srw:extraRecordData/link', LOC_NS, [:trim])]
+  )
+end
+
+to_field 'agg_preview' do |_record, accumulator, context|
+  accumulator << transform_values(
+    context,
+    'wr_id' => [extract_xml('srw:record/srw:extraRecordData/thumbnail', LOC_NS, [:trim])]
+  )
+end
 
 # Not using agg_is_shown_by
