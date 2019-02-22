@@ -3,7 +3,7 @@ AllCops:
   DisplayCopNames: true
 
 Metrics/LineLength:
-  Max: 130
+  Max: 140
 
 Style/MixinUsage:
   Enabled: false

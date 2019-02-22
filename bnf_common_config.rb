@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'xml_reader'
 require 'dlme_json_resource_writer'
 require 'macros/dlme'

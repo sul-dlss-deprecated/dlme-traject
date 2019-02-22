@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 record = 'srw:record/srw:recordData/oai_dc:dc'
 
 to_field 'cho_contributor', extract_xml("#{record}/dc:contributor", LOC_NS), split('. '), first_only, strip
