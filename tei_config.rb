@@ -1,18 +1,19 @@
 # frozen_string_literal: true
 
-require 'xml_reader'
+require 'traject_plus'
 require 'dlme_json_resource_writer'
 require 'macros/dlme'
-require 'macros/extraction'
 require 'macros/tei'
-require 'macros/xml'
+
 extend Macros::DLME
-extend Macros::Xml
 extend Macros::Tei
+extend TrajectPlus::Macros
+extend TrajectPlus::Macros::Xml
+extend TrajectPlus::Macros::Tei
 
 settings do
   provide 'writer_class_name', 'DlmeJsonResourceWriter'
-  provide 'reader_class_name', 'XmlReader'
+  provide 'reader_class_name', 'TrajectPlus::XmlReader'
 end
 
 to_field 'id', lambda { |_record, accumulator, context|

@@ -1,19 +1,17 @@
 # frozen_string_literal: true
 
-require 'xml_reader'
+require 'traject_plus'
 require 'dlme_json_resource_writer'
 require 'macros/dlme'
-require 'macros/extraction'
 require 'macros/fgdc'
-require 'macros/xml'
 
 extend Macros::DLME
-extend Macros::Xml
+extend TrajectPlus::Macros::Xml
 extend Macros::FGDC
 
 settings do
   provide 'writer_class_name', 'DlmeJsonResourceWriter'
-  provide 'reader_class_name', 'XmlReader'
+  provide 'reader_class_name', 'TrajectPlus::XmlReader'
 end
 
 # Record Identifier

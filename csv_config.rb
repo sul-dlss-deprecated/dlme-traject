@@ -1,16 +1,15 @@
 # frozen_string_literal: true
 
-require 'csv_reader'
+require 'traject_plus'
 require 'dlme_json_resource_writer'
 require 'macros/csv'
 require 'macros/dlme'
-require 'macros/extraction'
 
 extend Macros::DLME
 extend Macros::Csv
 settings do
   provide 'writer_class_name', 'DlmeJsonResourceWriter'
-  provide 'reader_class_name', 'CsvReader'
+  provide 'reader_class_name', 'TrajectPlus::CsvReader'
 end
 
 # MET Museum
