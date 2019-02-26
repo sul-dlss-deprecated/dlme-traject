@@ -2,19 +2,20 @@
 
 # Numismatics CSV Mapping Configuration
 
-require 'csv_reader'
+require 'traject_plus'
 require 'dlme_json_resource_writer'
 require 'macros/dlme'
-require 'macros/extraction'
 require 'macros/csv'
 require 'macros/numismatic_csv'
 extend Macros::DLME
 extend Macros::Csv
+extend TrajectPlus::Macros
+extend TrajectPlus::Macros::Csv
 extend Macros::NumismaticCsv
 
 settings do
   provide 'writer_class_name', 'DlmeJsonResourceWriter'
-  provide 'reader_class_name', 'CsvReader'
+  provide 'reader_class_name', 'TrajectPlus::CsvReader'
 end
 
 to_field 'agg_provider', provider
@@ -43,7 +44,7 @@ to_field 'cho_description', column('Reverse Type')
 to_field 'cho_title', column('Title')
 to_field 'cho_identifier', column('URI')
 to_field 'cho_description', column('Weight')
-to_field 'cho_date', column('Year', replace: ['|', ' - '])
+to_field 'cho_date', column('Year', gsub: ['|', ' - '])
 to_field 'agg_is_shown_at' do |_record, accumulator, context|
   accumulator << transform_values(context,
                                   'wr_id' => [column('URI')])

@@ -5,7 +5,6 @@ require 'traject/macros/marc_format_classifier'
 require 'dlme_json_resource_writer'
 require 'macros/dlme'
 require 'macros/dlme_marc'
-require 'macros/extraction'
 
 extend Macros::DLME
 extend Traject::Macros::Marc21

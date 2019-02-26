@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-require 'xml_reader'
+require 'traject_plus'
 require 'dlme_json_resource_writer'
 require 'macros/dlme'
-require 'macros/extraction'
 require 'macros/mods'
-require 'macros/xml'
 require 'macros/stanford'
 
 extend Macros::DLME
-extend Macros::Xml
+extend TrajectPlus::Macros
+extend TrajectPlus::Macros::Xml
+extend TrajectPlus::Macros::Mods
 extend Macros::Mods
 extend Macros::IIIF
 extend Macros::Stanford
 
 settings do
   provide 'writer_class_name', 'DlmeJsonResourceWriter'
-  provide 'reader_class_name', 'XmlReader'
+  provide 'reader_class_name', 'TrajectPlus::XmlReader'
 end
 
 # Spotlight DLME IR Record Identifier

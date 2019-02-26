@@ -1,17 +1,15 @@
 # frozen_string_literal: true
 
-require 'json_reader'
+require 'traject_plus'
 require 'dlme_json_resource_writer'
 require 'macros/dlme'
-require 'macros/extraction'
-require 'macros/json'
 
 extend Macros::DLME
-extend Macros::JSON
+extend TrajectPlus::Macros::JSON
 
 settings do
   provide 'writer_class_name', 'DlmeJsonResourceWriter'
-  provide 'reader_class_name', 'JsonReader'
+  provide 'reader_class_name', 'TrajectPlus::JsonReader'
 end
 
 to_field 'id', lambda { |_record, accumulator, context|
