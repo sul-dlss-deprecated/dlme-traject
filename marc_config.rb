@@ -11,6 +11,7 @@ extend Traject::Macros::Marc21
 extend Traject::Macros::Marc21Semantics
 extend Traject::Macros::MarcFormats
 extend Macros::DlmeMarc
+extend TrajectPlus::Macros
 
 settings do
   provide 'writer_class_name', 'DlmeJsonResourceWriter'
