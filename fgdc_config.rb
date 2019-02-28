@@ -8,6 +8,8 @@ require 'macros/fgdc'
 extend Macros::DLME
 extend TrajectPlus::Macros::Xml
 extend Macros::FGDC
+extend TrajectPlus::Macros
+extend TrajectPlus::Macros::FGDC
 
 settings do
   provide 'writer_class_name', 'DlmeJsonResourceWriter'
