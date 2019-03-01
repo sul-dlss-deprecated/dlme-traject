@@ -30,10 +30,10 @@ to_field 'cho_date', extract_xml("#{record}/dc:date", NS), transform: transform(
 to_field 'cho_description', extract_xml("#{record}/dc:description", NS), transform: transform(strip: true)
 to_field 'cho_dc_rights', extract_xml("#{record}/dc:rights", NS), transform: transform(strip: true)
 to_field 'cho_edm_type', extract_xml("#{record}/dc:type", NS),
-         strip, translation_map('not_found', 'types')
+         transform(strip: true, downcase: true), translation_map('not_found', 'types')
 to_field 'cho_format', extract_xml("#{record}/dc:format", NS), transform: transform(strip: true)
 to_field 'cho_language', extract_xml("#{record}/dc:language", NS), split(";"),
-         strip, translation_map('not_found', 'languages', 'marc_languages')
+         transform(strip: true, downcase: true), translation_map('not_found', 'languages', 'marc_languages')
 to_field 'cho_publisher', extract_xml("#{record}/dc:publisher", NS), transform: transform(strip: true)
 to_field 'cho_relation', extract_xml("#{record}/dc:relation", NS), transform: transform(strip: true)
 to_field 'cho_subject', extract_xml("#{record}/dc:subject", NS), transform: transform(strip: true)
