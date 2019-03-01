@@ -3,13 +3,15 @@
 require 'traject_plus'
 require 'dlme_json_resource_writer'
 require 'macros/dlme'
-require 'macros/bnf'
+require 'macros/oai'
+require 'macros/ssm'
 
 extend Macros::DLME
+extend Macros::OAI
 extend TrajectPlus::Macros
 extend TrajectPlus::Macros::Xml
 
-NS = { xmlns: 'http://www.openarchives.org/OAI/2.0/' }.merge(Macros::BNF::NS).freeze
+NS = { xmlns: 'http://www.openarchives.org/OAI/2.0/' }.merge(Macros::OAI::NS).freeze
 
 settings do
   provide 'writer_class_name', 'DlmeJsonResourceWriter'
@@ -19,7 +21,7 @@ end
 record = '/xmlns:record/xmlns:metadata/oai_dc:dc'
 
 # Cho Required
-to_field 'id', extract: extract_xml("#{record}/dc:identifier", NS), transform: transform(strip: true)
+to_field 'id', extract: extract_oai('dc:identifier'), transform: transform(strip: true)
 to_field 'cho_title', extract: extract_xml("#{record}/dc:title", NS), transform: transform(strip: true)
 
 # Cho Other
