@@ -19,6 +19,9 @@ end
 to_field 'id', extract: extract_srw('dc:identifier'), transform: transform(strip: true)
 to_field 'cho_title', extract: extract_srw('dc:title'), transform: transform(strip: true)
 
+# Required per data agreement
+to_field 'cho_provenance', literal('This document is part of BnF website \'Bibliothèques d\'Orient\' - http://heritage.bnf.fr/bibliothequesorient/')
+
 # Cho Other
 to_field 'cho_date', extract: extract_srw('dc:date'), transform: transform(strip: true)
 to_field 'cho_description', extract: extract_srw('dc:description'), transform: transform(strip: true)
