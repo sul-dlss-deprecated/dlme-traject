@@ -16,21 +16,21 @@ settings do
 end
 
 # Cho Required
-to_field 'id', extract: extract_srw('dc:identifier'), transform: transform(strip: true)
-to_field 'cho_title', extract: extract_srw('dc:title'), transform: transform(strip: true)
+to_field 'id', extract_srw('dc:identifier'), strip
+to_field 'cho_title', extract_srw('dc:title'), strip
 
 # Required per data agreement
 to_field 'cho_provenance', literal('This document is part of BnF website \'Bibliothèques d\'Orient\' - http://heritage.bnf.fr/bibliothequesorient/')
 
 # Cho Other
-to_field 'cho_date', extract: extract_srw('dc:date'), transform: transform(strip: true)
-to_field 'cho_description', extract: extract_srw('dc:description'), transform: transform(strip: true)
-to_field 'cho_dc_rights', extract: extract_srw('dc:rights'), transform: transform(strip: true)
-to_field 'cho_format', extract: extract_srw('dc:format'), transform: transform(strip: true)
-to_field 'cho_publisher', extract: extract_srw('dc:publisher'), transform: transform(strip: true)
-to_field 'cho_relation', extract: extract_srw('dc:relation'), transform: transform(strip: true)
-to_field 'cho_source', extract: extract_srw('dc:source'), transform: transform(strip: true)
-to_field 'cho_subject', extract: extract_srw('dc:subject'), transform: transform(strip: true)
+to_field 'cho_date', extract_srw('dc:date'), strip
+to_field 'cho_description', extract_srw('dc:description'), strip
+to_field 'cho_dc_rights', extract_srw('dc:rights'), strip
+to_field 'cho_format', extract_srw('dc:format'), strip
+to_field 'cho_publisher', extract_srw('dc:publisher'), strip
+to_field 'cho_relation', extract_srw('dc:relation'), strip
+to_field 'cho_source', extract_srw('dc:source'), strip
+to_field 'cho_subject', extract_srw('dc:subject'), strip
 
 # Agg
 to_field 'agg_provider', provider
