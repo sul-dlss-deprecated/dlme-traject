@@ -30,10 +30,10 @@ to_field 'cho_date', extract_oai('dc:date'), strip
 to_field 'cho_description', extract_oai('dc:description'), strip
 to_field 'cho_dc_rights', extract_oai('dc:rights'), strip
 to_field 'cho_edm_type', extract_oai('dc:type'),
-        split(';'), strip, translation_map('not_found', 'types'), transform(&:downcase)
+        split(';'), strip, transform(&:downcase), translation_map('not_found', 'types')
 to_field 'cho_format', extract_oai('dc:format'), strip
 to_field 'cho_language', extract_oai('dc:language'), split(';'),
-         split(';'), split(','), strip, transform(&:titleize), gsub('french?', 'french'), translation_map('not_found', 'languages', 'marc_languages', )
+         split(';'), split(','), strip, gsub('french?', 'french'), translation_map('not_found', 'languages', 'marc_languages'), transform(&:titleize)
 to_field 'cho_publisher', extract_oai('dc:publisher'), strip
 to_field 'cho_relation', extract_oai('dc:relation'), strip
 to_field 'cho_subject', extract_oai('dc:subject'), strip
