@@ -236,5 +236,19 @@
       "agg_data_provider": "Sakip Sabanci Museum",
       "inst_id": "sakip-sabanci"
     }
+  },
+  {
+    "trajects": [
+      "auc_config.rb"
+    ],
+    "paths": [
+      "auc"
+    ],
+    "extension": ".xml",
+    "settings": {
+      "agg_provider": "American University in Cairo",
+      "agg_data_provider": "American University in Cairo",
+      "inst_id": "auc"
+    }
   }
 ]
