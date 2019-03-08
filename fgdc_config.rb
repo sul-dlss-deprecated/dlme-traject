@@ -77,7 +77,7 @@ to_field 'agg_data_provider', data_provider
 to_field 'agg_has_view' do |record, accumulator, context|
   accumulator << transform_values(context,
                                   'wr_id' => literal(record.xpath('/*/idinfo/citation/citeinfo/onlink', NS).map(&:text).first),
-                                  'wr_rights' => extract_fgdc('/*/idinfo/useconst'))
+                                  'wr_dc_rights' => extract_fgdc('/*/idinfo/useconst'))
 end
 
 # Not using agg_is_shown_at
