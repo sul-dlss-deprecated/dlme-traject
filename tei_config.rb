@@ -40,6 +40,8 @@ to_field 'agg_preview' do |_record, accumulator, context|
   accumulator << transform_values(context,
                                   'wr_id' => [penn_image_uri(penn_thumbnail_image_query)])
 end
+to_field 'cho_edm_type', literal('text')
+
 ms_contents = 'tei:msContents'
 to_field 'cho_description', extract_tei("#{ms_desc}/#{ms_contents}/tei:summary")
 to_field 'cho_language', main_language
