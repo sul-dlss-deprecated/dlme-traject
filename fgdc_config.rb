@@ -24,7 +24,7 @@ to_field 'cho_identifier', generate_fgdc_id
 to_field 'cho_title', extract_fgdc('/*/idinfo/citation/citeinfo/title')
 to_field 'cho_title', extract_fgdc('/*/idinfo/citation/citeinfo/edition')
 
-# Other CHO
+# CHO Other
 to_field 'cho_coverage', extract_fgdc('/*/dataqual/lineage/srcinfo/srctime/timeinfo/rngdates/begdate')
 to_field 'cho_coverage', extract_fgdc('/*/dataqual/lineage/srcinfo/srctime/timeinfo/rngdates/enddate')
 to_field 'cho_coverage', extract_fgdc('/*/dataqual/lineage/srcinfo/srctime/timeinfo/sngdate/caldate')
@@ -35,7 +35,7 @@ to_field 'cho_dc_rights', extract_fgdc('/*/idinfo/useconst')
 to_field 'cho_description', extract_fgdc('/*/idinfo/descript/abstract')
 to_field 'cho_description', extract_fgdc('/*/idinfo/descript/purpose')
 to_field 'cho_description', extract_fgdc('/*/idinfo/status/update')
-to_field 'cho_edm_type', normalize_type
+to_field 'cho_edm_type', literal('image')
 to_field 'cho_extent', extract_fgdc('/*/idinfo/crossref/citeinfo/othercit')
 to_field 'cho_format', extract_fgdc('/*/distinfo/stdorder/digform/digtinfo/formname')
 to_field 'cho_format', extract_fgdc('/*/spdoinfo/direct')
