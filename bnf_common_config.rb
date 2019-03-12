@@ -38,13 +38,13 @@ to_field 'agg_data_provider', data_provider
 to_field 'agg_is_shown_at' do |_record, accumulator, context|
   accumulator << transform_values(
     context,
-    'wr_id' => [extract_xml('srw:record/srw:extraRecordData/link', Macros::SRW::NS, [:strip])]
+    'wr_id' => [extract_xml('srw:record/srw:extraRecordData/link', Macros::SRW::NS), strip]
   )
 end
 
 to_field 'agg_preview' do |_record, accumulator, context|
   accumulator << transform_values(
     context,
-    'wr_id' => [extract_xml('srw:record/srw:extraRecordData/thumbnail', Macros::SRW::NS, [:strip])]
+    'wr_id' => [extract_xml('srw:record/srw:extraRecordData/thumbnail', Macros::SRW::NS), strip]
   )
 end
