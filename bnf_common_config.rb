@@ -7,7 +7,6 @@ require 'macros/srw'
 
 extend Macros::DLME
 extend TrajectPlus::Macros
-extend TrajectPlus::Macros::Xml
 extend Macros::SRW
 
 settings do
