@@ -48,7 +48,6 @@ to_field 'cho_source', column('Reference')
 to_field 'cho_spatial', column('Region')
 to_field 'cho_temporal', column('Dynasty')
 
-
 to_field 'agg_is_shown_at' do |_record, accumulator, context|
   accumulator << transform_values(context,
                                   'wr_id' => [column('URI')])
