@@ -8,6 +8,8 @@ require 'macros/dlme'
 require 'macros/csv'
 extend Macros::DLME
 extend Macros::Csv
+extend TrajectPlus::Macros
+extend TrajectPlus::Macros::Csv
 
 settings do
   provide 'writer_class_name', 'DlmeJsonResourceWriter'
