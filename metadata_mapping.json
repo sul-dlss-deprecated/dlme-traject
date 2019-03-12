@@ -132,12 +132,12 @@
   },
   {
     "trajects": [
-      "met_csv_config.rb"
+      "met_config.rb"
     ],
     "paths": [
       "met/ancient-near-east-art"
     ],
-    "extension": ".csv",
+    "extension": ".json",
     "settings": {
       "agg_provider": "Metropolitan Museum of Art",
       "inst_id": "met"
