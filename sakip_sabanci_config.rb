@@ -8,7 +8,6 @@ require 'macros/oai'
 extend Macros::DLME
 extend Macros::OAI
 extend TrajectPlus::Macros
-extend TrajectPlus::Macros::Xml
 
 settings do
   provide 'writer_class_name', 'DlmeJsonResourceWriter'
