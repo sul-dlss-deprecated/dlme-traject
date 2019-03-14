@@ -16,6 +16,7 @@ provide a basis for getting started writing your own configurations.
 1. [Comma Separated Values](#comma-separated-values)
 2. [XML](#xml)
 3. [Binary MARC](#binary-marc)
+4. [JSON](#json)
 
 ### Comma Separated Values
 
@@ -66,7 +67,7 @@ to_field('wr_id'), generate_mods_id
 to_field('cho_title'), extract_mods('/*/mods:titleInfo/mods:title', )
 to_field 'agg_is_shown_at' do |_record, accumulator, context|
   accumulator << transform_values(context,
-                                  'wr_id' => [extract_mods('/*/mods:thumbnail/mods:resource')
+                                  'wr_id' => [extract_mods('/*/mods:thumbnail/mods:resource')]
 end
 to_field 'agg_data_provider', data_provider
 to_field 'agg_provider', provider
@@ -118,4 +119,30 @@ to_field 'agg_provider', provider # set in the settings.yml file
 to_field 'agg_has_view' do |_record, accumulator, context|
   accumulator << transform_values(context, 'wr_id' => extract_marc('856u', first: true))
 end
+```
+
+### JSON
+
+#### Generic JSON
+
+##### Example Source Data
+
+```
+{
+	"title": "JSON Item Title",
+	"thumbnail": {
+		"resource": "http://www.example.com/thumbs/12345.jpg"
+	}
+}
+```
+
+##### Example Configuration
+
+```
+to_field('cho_title'), extract_json('.title', )
+to_field 'agg_is_shown_at' do |_record, accumulator, context|
+  accumulator << transform_values(context,
+                                  'wr_id' => [extract_json('.thumbnail.resource')]
+end
+to_field 'agg_data_provider', data_provider
 ```
