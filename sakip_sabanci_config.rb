@@ -16,7 +16,7 @@ settings do
 end
 
 # Cho Required
-to_field 'id', extract_oai('dc:identifier'), strip
+to_field 'id', extract_oai_identifier(), strip
 to_field 'cho_title', extract_oai('dc:title'), strip
 
 # Cho Other
