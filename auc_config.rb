@@ -33,7 +33,7 @@ to_field 'cho_edm_type', extract_oai('dc:type'),
          split(';'), strip, transform(&:downcase), translation_map('not_found', 'types')
 to_field 'cho_format', extract_oai('dc:format'), strip
 to_field 'cho_language', extract_oai('dc:language'), split(';'),
-         split(','), strip, transform(&:downcase), translation_map('not_found', 'languages', 'iso_639-1')
+         split(','), strip, transform(&:downcase), translation_map('not_found', 'languages', 'auc-languages-errors', 'iso_639-1')
 to_field 'cho_publisher', extract_oai('dc:publisher'), strip
 to_field 'cho_relation', extract_oai('dc:relation'), strip
 to_field 'cho_subject', extract_oai('dc:subject'), strip
