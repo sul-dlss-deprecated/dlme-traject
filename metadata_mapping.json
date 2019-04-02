@@ -250,5 +250,19 @@
       "agg_data_provider": "American University in Cairo",
       "inst_id": "auc"
     }
+  },
+  {
+    "trajects": [
+      "qnl_config.rb"
+    ],
+    "paths": [
+      "qnl"
+    ],
+    "extension": ".xml",
+    "settings": {
+      "agg_provider": "Qatar National Library",
+      "agg_data_provider": "British Library, India Office",
+      "inst_id": "qnl"
+    }
   }
 ]
