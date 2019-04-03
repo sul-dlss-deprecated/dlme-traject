@@ -16,9 +16,9 @@ end
 
 # Should probably be broken out into a separate macro
 NS = {
-      oai: 'http://www.openarchives.org/OAI/2.0/',
-      mods: 'http://www.loc.gov/mods/v3'
-    }.freeze
+  oai: 'http://www.openarchives.org/OAI/2.0/',
+  mods: 'http://www.loc.gov/mods/v3'
+}.freeze
 
 PREFIX = '/oai:record/oai:metadata/mods:mods/'
 
@@ -41,11 +41,11 @@ to_field 'cho_date', extract_mods('mods:originInfo/mods:dateIssued'), strip
 to_field 'cho_dc_rights', literal('Open Government Licence')
 to_field 'cho_description', extract_mods('mods:physicalDescription/mods:extent'), strip
 to_field 'cho_edm_type', extract_mods('mods:typeOfResource'),
-        strip, transform(&:downcase), translation_map('not_found', 'types')
+         strip, transform(&:downcase), translation_map('not_found', 'types')
 to_field 'cho_extent', extract_mods('mods:physicalDescription/mods:extent[1]'), strip
 to_field 'cho_identifier', extract_mods('mods:recordInfo/mods:recordIdentifier')
 to_field 'cho_language', extract_mods('mods:language/mods/languageTerm'),
-        strip, transform(&:downcase), translation_map('not_found', 'languages', 'marc_languages')
+         strip, transform(&:downcase), translation_map('not_found', 'languages', 'marc_languages')
 to_field 'cho_subject', extract_mods('mods:subject/mods:topic'), strip
 
 # Agg
