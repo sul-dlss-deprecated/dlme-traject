@@ -97,7 +97,7 @@ end
 to_field 'cho_alternative', extract_marc('130:240:246')
 to_field 'cho_contributor', extract_role('700', 'contributor')
 to_field 'cho_creator', extract_marc('100:110:111', trim_punctuation: true)
-to_field 'cho_date', marc_publication_date
+to_field 'cho_date', marc_publication_date, transform(&:to_s)
 to_field 'cho_description', extract_marc('500:505:520')
 to_field 'cho_edm_type', marc_type_to_edm
 to_field 'cho_extent', extract_marc('300a', separator: nil, trim_punctuation: true)
