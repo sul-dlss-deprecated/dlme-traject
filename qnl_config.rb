@@ -3,31 +3,15 @@
 require 'traject_plus'
 require 'dlme_json_resource_writer'
 require 'macros/dlme'
-require 'macros/mods'
+require 'macros/qnl'
 
 extend Macros::DLME
+extend Macros::QNL
 extend TrajectPlus::Macros
-extend Traject::Macros::NokogiriMacros
 
 settings do
   provide 'writer_class_name', 'DlmeJsonResourceWriter'
   provide 'reader_class_name', 'TrajectPlus::XmlReader'
-end
-
-# Should probably be broken out into a separate macro
-NS = {
-  oai: 'http://www.openarchives.org/OAI/2.0/',
-  mods: 'http://www.loc.gov/mods/v3'
-}.freeze
-
-PREFIX = '/oai:record/oai:metadata/mods:mods/'
-
-def extract_mods(xpath)
-  extract_xpath("#{PREFIX}#{xpath}", ns: NS)
-end
-
-def extract_mods_identifier
-  extract_xpath('/oai:record/oai:header/oai:identifier', ns: NS)
 end
 
 # CHO Required
