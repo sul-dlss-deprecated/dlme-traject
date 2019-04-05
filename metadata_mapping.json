@@ -250,5 +250,19 @@
       "agg_data_provider": "American University in Cairo",
       "inst_id": "auc"
     }
+  },
+  {
+    "trajects": [
+      "yale_medical_config.rb"
+    ],
+    "paths": [
+      "yale/medical-manuscripts"
+    ],
+    "extension": ".csv",
+    "settings": {
+      "agg_provider": "Yale University",
+      "agg_data_provider": "Yale University",
+      "inst_id": "yale"
+    }
   }
 ]
