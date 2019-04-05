@@ -21,7 +21,7 @@ to_field 'cho_title', column('Title'), strip
 # CHO other
 to_field 'cho_alternative', column('Variant Titles', split: '|'), strip
 to_field 'cho_coverage', column('Subject, geographic code'), strip
-to_field 'cho_creator', column('Creator',  split: '|'), strip
+to_field 'cho_creator', column('Creator', split: '|'), strip
 to_field 'cho_date', column('Date, created'), strip
 to_field 'cho_date', column('Date, Created ISO'), strip
 to_field 'cho_dc_rights', column('Rights'), strip
