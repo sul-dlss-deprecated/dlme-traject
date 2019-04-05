@@ -18,9 +18,15 @@ end
 
 to_field 'agg_provider', provider
 
-# MET Museum
+# CHO required
 to_field 'id', normalize_prefixed_id('emuIRN')
+# Skip over missing titles, revisit if data changes
+each_record do |record, context|
+  context.skip!('Missing title') if record['object_name'].nil?
+end
+to_field 'cho_title', column('object_name', split: '|')
 
+# CHO other
 to_field 'cho_provenance', column('accession_credit_line')
 to_field 'cho_creator', column('creator')
 to_field 'cho_coverage', column('culture', split: '|')
@@ -40,7 +46,6 @@ to_field 'cho_extent', column('measurement_tickness')
 to_field 'cho_extent', column('measurement_unit')
 to_field 'cho_extent', column('measurement_width')
 to_field 'cho_alternative_title', column('native_name')
-to_field 'cho_title', column('object_name', split: '|')
 to_field 'cho_source', column('object_number')
 to_field 'cho_identifier', column('other_numbers', split: '|')
 to_field 'cho_temporal', column('period', split: '|')
