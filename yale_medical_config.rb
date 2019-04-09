@@ -20,7 +20,6 @@ to_field 'cho_title', column('Title'), strip
 
 # CHO other
 to_field 'cho_alternative', column('Variant Titles', split: '|'), strip
-to_field 'cho_coverage', column('Subject, geographic code'), strip
 to_field 'cho_creator', column('Creator', split: '|'), strip
 to_field 'cho_date', column('Date, created'), strip
 to_field 'cho_date', column('Date, Created ISO'), strip
@@ -35,7 +34,6 @@ to_field 'cho_identifier', column('Accession number'), strip
 to_field 'cho_language', column('Language', split: '|'),
          strip, transform(&:downcase), translation_map('not_found', 'languages', 'marc_languages')
 to_field 'cho_provenance', column('Associated Names'), strip
-to_field 'cho_provenance', column('Yale Collection'), strip
 to_field 'cho_publisher', column('Publisher'), strip
 to_field 'cho_subject', column('Subject, topic'), strip
 to_field 'cho_type', column('Content Type'), strip
