@@ -264,5 +264,19 @@
       "agg_data_provider": "Yale University. Cushing/Whitney Medical Library",
       "inst_id": "yale"
     }
+  },
+  {
+    "trajects": [
+      "qnl_config.rb"
+    ],
+    "paths": [
+      "qnl"
+    ],
+    "extension": ".xml",
+    "settings": {
+      "agg_provider": "Qatar National Library",
+      "agg_data_provider": "British Library, India Office",
+      "inst_id": "qnl"
+    }
   }
 ]
