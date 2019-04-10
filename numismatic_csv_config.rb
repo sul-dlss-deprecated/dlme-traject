@@ -18,14 +18,12 @@ settings do
   provide 'reader_class_name', 'TrajectPlus::CsvReader'
 end
 
-to_field 'agg_provider', provider
-
 # CHO Required
 to_field 'id', normalize_prefixed_id('RecordId')
 to_field 'cho_title', column('Title')
 
 # CHO Other
-to_field 'cho_contributor', column('Authority'),  split('|')
+to_field 'cho_contributor', column('Authority'), split('|')
 to_field 'cho_coverage', column('Findspot')
 to_field 'cho_creator', column('Mint')
 to_field 'agg_data_provider', provider_department
@@ -48,6 +46,7 @@ to_field 'cho_source', column('Reference')
 to_field 'cho_spatial', column('Region')
 to_field 'cho_temporal', column('Dynasty')
 
+# Agg
 to_field 'agg_is_shown_at' do |_record, accumulator, context|
   accumulator << transform_values(context,
                                   'wr_id' => [column('URI')])
@@ -56,3 +55,4 @@ to_field 'agg_is_shown_by' do |_record, accumulator, context|
   accumulator << transform_values(context,
                                   'wr_id' => [column('Thumbnail_obv')])
 end
+to_field 'agg_provider', provider
