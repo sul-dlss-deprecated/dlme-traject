@@ -167,6 +167,7 @@
     "extension": ".csv",
     "settings": {
       "agg_provider": "American Numismatic Society",
+      "agg_data_provider": "American Numismatic Society",
       "inst_id": "ans"
     }
   },
