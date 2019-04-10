@@ -25,12 +25,12 @@ to_field 'id', normalize_prefixed_id('RecordId')
 to_field 'cho_title', column('Title')
 
 # CHO Other
-to_field 'cho_contributor', column('Authority', split: '|')
+to_field 'cho_contributor', column('Authority'),  split('|')
 to_field 'cho_coverage', column('Findspot')
 to_field 'cho_creator', column('Mint')
 to_field 'agg_data_provider', provider_department
 to_field 'cho_date', column('Era')
-to_field 'cho_date', column('Year', gsub: ['|', ' - '])
+to_field 'cho_date', column('Year'), gsub('|', ' - ')
 to_field 'cho_description', column('Denomination')
 to_field 'cho_description', column('Manufacture')
 to_field 'cho_description', column('Obverse Legend')
