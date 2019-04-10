@@ -127,6 +127,7 @@
     ],
     "settings": {
       "agg_provider": "University of Pennsylvania Libraries",
+      "agg_data_provider": "University of Pennsylvania Libraries. Rare Book and Manuscript Collections",
       "inst_id": "penn"
     }
   },

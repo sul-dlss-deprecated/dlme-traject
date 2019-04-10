@@ -23,7 +23,7 @@ to_field 'id', lambda { |_record, accumulator, context|
 
 pub_stmt = '/*/tei:teiHeader/tei:fileDesc/tei:publicationStmt'
 to_field 'cho_publisher', extract_tei("#{pub_stmt}/tei:publisher")
-to_field 'cho_dc_rights', extract_tei("#{pub_stmt}/tei:availability/tei:licence", trim: true)
+to_field 'cho_dc_rights', extract_tei("#{pub_stmt}/tei:availability/tei:licence"), strip
 
 ms_desc = '/*/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc'
 ms_id = 'tei:msIdentifier'
@@ -44,8 +44,8 @@ to_field 'cho_edm_type', literal('text')
 
 ms_contents = 'tei:msContents'
 to_field 'cho_description', extract_tei("#{ms_desc}/#{ms_contents}/tei:summary")
-to_field 'cho_language', main_language, transform(&:downcase), translation_map('not_found', 'languages', 'marc_languages')
-to_field 'cho_language', other_languages, transform(&:downcase), translation_map('not_found', 'languages', 'marc_languages')
+to_field 'cho_language', transform(&:downcase), translation_map('not_found', 'languages', 'marc_languages')
+to_field 'cho_language', transform(&:downcase), translation_map('not_found', 'languages', 'marc_languages')
 
 ms_item = 'tei:msItem'
 to_field 'cho_title', extract_tei("#{ms_desc}/#{ms_contents}/#{ms_item}/tei:title")
@@ -68,6 +68,6 @@ to_field 'cho_subject', extract_tei("#{profile_desc}/tei:keywords[@n='subjects']
 
 # Provider fields [REQUIRED]
 to_field 'agg_provider', provider
-to_field 'agg_data_provider', generate_data_provider("#{ms_desc}/#{ms_id}")
+to_field 'agg_data_provider', data_provider
 
 to_field 'agg_edm_rights', public_domain
