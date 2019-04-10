@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# Numismatics CSV Mapping Configuration
-
 require 'traject_plus'
 require 'dlme_json_resource_writer'
 require 'macros/dlme'
@@ -18,35 +16,42 @@ end
 
 to_field 'agg_provider', provider
 
-# MET Museum
+# CHO required
 to_field 'id', normalize_prefixed_id('emuIRN')
+# Skip over missing titles, revisit if data changes
+each_record do |record, context|
+  context.skip!('Missing title') if record['object_name'].nil?
+end
+to_field 'cho_title', column('object_name'), split('|')
 
-to_field 'cho_provenance', column('accession_credit_line')
-to_field 'cho_creator', column('creator')
-to_field 'cho_coverage', column('culture', split: '|')
+# CHO other
+to_field 'cho_alternative', column('native_name')
+to_field 'cho_coverage', column('culture'), split('|')
 to_field 'cho_coverage', column('culture_area')
-to_field 'agg_data_provider', column('curatorial_section', append: ' Section, Penn Museum')
+to_field 'cho_creator', column('creator')
+to_field 'agg_data_provider', column('curatorial_section'), append(' Section, Penn Museum')
 to_field 'cho_date', column('date_made')
 to_field 'cho_date', column('date_made_early')
 to_field 'cho_date', column('date_made_late')
-to_field 'cho_description', column('description', split: '<br />')
-to_field 'cho_identifier', column('emuIRN')
-to_field 'cho_subject', column('iconography')
-to_field 'cho_medium', column('material', split: '|')
+to_field 'cho_description', column('description'), split('<br />')
+to_field 'cho_description', column('technique'), split('|')
+to_field 'cho_edm_type', literal('Image')
 to_field 'cho_extent', column('measurement_height')
 to_field 'cho_extent', column('measurement_length')
 to_field 'cho_extent', column('measurement_outside_diameter')
 to_field 'cho_extent', column('measurement_tickness')
 to_field 'cho_extent', column('measurement_unit')
 to_field 'cho_extent', column('measurement_width')
-to_field 'cho_alternative_title', column('native_name')
-to_field 'cho_title', column('object_name', split: '|')
+to_field 'cho_identifier', column('emuIRN')
+to_field 'cho_identifier', column('other_numbers'), split('|')
+to_field 'cho_medium', column('material'), split('|')
+to_field 'cho_provenance', column('accession_credit_line')
 to_field 'cho_source', column('object_number')
-to_field 'cho_identifier', column('other_numbers', split: '|')
-to_field 'cho_temporal', column('period', split: '|')
-to_field 'cho_spatial', column('provenience', split: '|')
-to_field 'cho_description', column('technique', split: '|')
+to_field 'cho_spatial', column('provenience'), split('|')
+to_field 'cho_subject', column('iconography')
+to_field 'cho_temporal', column('period'), split('|')
 
+# Agg
 to_field 'agg_is_shown_at' do |_record, accumulator, context|
   accumulator << transform_values(
     context,

@@ -26,7 +26,7 @@ end
 to_field 'cho_identifier', extract_marc('001')
 to_field 'cho_identifier', extract_marc('010a')
 to_field 'cho_identifier', oclcnum
-to_field 'cho_language', marc_languages
+to_field 'cho_language', transform(&:downcase), translation_map('not_found', 'languages', 'marc_languages')
 to_field 'cho_title', extract_marc('245', trim_punctuation: true)
 
 # CHO Other
@@ -39,7 +39,7 @@ to_field 'cho_creator', extract_marc('100:110:111', trim_punctuation: true)
 to_field 'cho_creator', extract_role('700', 'creator')
 to_field 'cho_creator', extract_role('710', 'creator')
 to_field 'cho_creator', extract_role('711', 'creator')
-to_field 'cho_date', marc_publication_date
+to_field 'cho_date', marc_publication_date, transform(&:to_s)
 # to_field 'cho_dc_rights', ?
 to_field 'cho_description', extract_marc('500:505:520')
 to_field 'cho_edm_type', marc_type_to_edm
