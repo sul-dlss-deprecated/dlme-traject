@@ -61,7 +61,11 @@ to_field 'cho_type', marc_type_to_edm
 # Agg Required
 to_field 'agg_data_provider', data_provider
 to_field 'agg_provider', provider
-
 to_field 'agg_has_view' do |_record, accumulator, context|
-  accumulator << transform_values(context, 'wr_id' => extract_marc('856u', first: true))
+  values = transform_values(context, 'wr_id' => extract_marc('856u', first: true))
+  if values.fetch('wr_id', []).empty?
+    values = transform_values(context, 'wr_id' => [extract_marc('001', first: true),
+                                                   prepend('http://hdl.library.upenn.edu/1017/d/medren/')])
+  end
+  accumulator << values
 end
