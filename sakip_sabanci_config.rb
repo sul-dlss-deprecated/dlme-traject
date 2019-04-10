@@ -48,7 +48,7 @@ to_field 'agg_is_shown_at' do |_record, accumulator, context|
 end
 to_field 'agg_preview' do |_record, accumulator, context|
   accumulator << transform_values(
-      context,
-      'wr_id' => [extract_cdm_preview]
+    context,
+    'wr_id' => [extract_cdm_preview]
   )
 end
