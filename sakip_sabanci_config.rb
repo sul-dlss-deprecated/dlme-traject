@@ -4,7 +4,8 @@ require 'traject_plus'
 require 'dlme_json_resource_writer'
 require 'macros/dlme'
 require 'macros/oai'
-
+require 'macros/content_dm'
+extend Macros::ContentDm
 extend Macros::DLME
 extend Macros::OAI
 extend TrajectPlus::Macros
@@ -37,11 +38,17 @@ to_field 'cho_relation', extract_oai('dc:relation'), strip
 to_field 'cho_subject', extract_oai('dc:subject'), strip
 
 # Agg
-to_field 'agg_provider', provider
 to_field 'agg_data_provider', data_provider
+to_field 'agg_provider', provider
 to_field 'agg_is_shown_at' do |_record, accumulator, context|
   accumulator << transform_values(
     context,
     'wr_id' => [extract_oai('dc:identifier[last()]'), strip]
+  )
+end
+to_field 'agg_preview' do |_record, accumulator, context|
+  accumulator << transform_values(
+      context,
+      'wr_id' => [extract_cdm_preview]
   )
 end
