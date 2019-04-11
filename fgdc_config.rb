@@ -35,7 +35,7 @@ to_field 'cho_dc_rights', extract_fgdc('/*/idinfo/useconst')
 to_field 'cho_description', extract_fgdc('/*/idinfo/descript/abstract')
 to_field 'cho_description', extract_fgdc('/*/idinfo/descript/purpose')
 to_field 'cho_description', extract_fgdc('/*/idinfo/status/update')
-to_field 'cho_edm_type', literal('image')
+to_field 'cho_edm_type', literal('Image')
 to_field 'cho_extent', extract_fgdc('/*/idinfo/crossref/citeinfo/othercit')
 to_field 'cho_format', extract_fgdc('/*/distinfo/stdorder/digform/digtinfo/formname')
 to_field 'cho_format', extract_fgdc('/*/spdoinfo/direct')
@@ -76,7 +76,14 @@ to_field 'agg_data_provider', data_provider
 
 to_field 'agg_has_view' do |record, accumulator, context|
   accumulator << transform_values(context,
-                                  'wr_id' => literal(record.xpath('/*/idinfo/citation/citeinfo/onlink', NS).map(&:text).first),
+                                  'wr_id' => literal(record.xpath('/*/idinfo/citation/citeinfo/onlink', NS)
+                                             .map(&:text)
+                                             .first
+                                             .split('VCollName=')
+                                             .last
+                                             .downcase
+                                             .tr('_', '-')
+                                             .prepend('https://earthworks.stanford.edu/catalog/harvard-')),
                                   'wr_dc_rights' => extract_fgdc('/*/idinfo/useconst'))
 end
 
