@@ -5,7 +5,6 @@ require 'dlme_json_resource_writer'
 require 'macros/dlme'
 require 'macros/mods'
 require 'macros/stanford'
-
 extend Macros::DLME
 extend TrajectPlus::Macros
 extend TrajectPlus::Macros::Xml
@@ -59,7 +58,8 @@ to_field 'cho_description', extract_mods('/*/mods:location/mods:holdingSimple/mo
 to_field 'cho_description', extract_mods('/*/mods:note')
 to_field 'cho_description', extract_mods('/*/mods:physicalDescription/mods:note')
 to_field 'cho_description', extract_mods('/*/mods:tableOfContents')
-to_field 'cho_edm_type', normalize_type
+to_field 'cho_edm_type', extract_mods('/*/mods:typeOfResource[1]'),
+         strip, transform(&:downcase), translation_map('not_found', 'types', 'marc-types')
 to_field 'cho_extent', extract_mods('/*/mods:physicalDescription/mods:extent')
 to_field 'cho_format', extract_mods('/*/mods:physicalDescription/mods:form')
 to_field 'cho_has_part', generate_relation('/*/mods:relatedItem[@type="constituent"]')
