@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 extend Macros::IIIF
 
 # Not using agg_has_view since we have the above
