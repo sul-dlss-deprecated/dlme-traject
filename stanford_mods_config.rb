@@ -1,6 +1,7 @@
 # frozen_string_literal: true
+extend Macros::IIIF
 
-load_config_file((Rails.root + 'lib/traject/mods_config.rb').to_s)
+# load_config_file((Rails.root + 'lib/traject/mods_config.rb').to_s)
 
 # Not using agg_has_view since we have the above
 to_field 'agg_is_shown_at' do |record, accumulator, context|

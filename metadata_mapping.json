@@ -1,7 +1,8 @@
 [
    {
     "trajects": [
-      "mods_config.rb"
+      "mods_config.rb",
+      "stanford_mods_config.rb"
     ],
     "paths": [
       "stanford/maps"
