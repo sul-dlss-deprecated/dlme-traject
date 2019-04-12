@@ -74,7 +74,7 @@ to_field 'cho_type', extract_fgdc('/*/dataqual/lineage/srcinfo/srccite/citeinfo/
 to_field 'agg_provider', provider
 to_field 'agg_data_provider', data_provider
 
-to_field 'agg_has_view' do |record, accumulator, context|
+to_field 'agg_is_shown_at' do |record, accumulator, context|
   accumulator << transform_values(context,
                                   'wr_id' => literal(record.xpath('/*/idinfo/citation/citeinfo/onlink', NS)
                                              .map(&:text)
