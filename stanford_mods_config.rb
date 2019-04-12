@@ -61,7 +61,7 @@ def iiif_sequences_service(iiif_json)
   }
 end
 
-to_field 'cho_edm_type', literal('image')
+to_field 'cho_edm_type', literal('Image')
 # STANFORD Specific
 to_field 'cho_has_type', extract_mods('/*/mods:extension/rdf:RDF/rdf:Description/dc:format')
 to_field 'cho_type', extract_mods('/*/mods:extension/rdf:RDF/rdf:Description/dc:type')
