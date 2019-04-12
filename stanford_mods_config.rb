@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-load_config_file((Rails.root + 'lib/traject/mods_config.rb').to_s)
+extend Macros::IIIF
 
 # Not using agg_has_view since we have the above
 to_field 'agg_is_shown_at' do |record, accumulator, context|
@@ -61,7 +61,7 @@ def iiif_sequences_service(iiif_json)
   }
 end
 
-to_field 'cho_edm_type', literal('image')
+to_field 'cho_edm_type', literal('Image')
 # STANFORD Specific
 to_field 'cho_has_type', extract_mods('/*/mods:extension/rdf:RDF/rdf:Description/dc:format')
 to_field 'cho_type', extract_mods('/*/mods:extension/rdf:RDF/rdf:Description/dc:type')
