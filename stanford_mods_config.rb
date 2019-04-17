@@ -2,19 +2,20 @@
 
 extend Macros::IIIF
 
-# Not using agg_has_view since we have the above
-to_field 'agg_is_shown_at' do |record, accumulator, context|
-  druid = generate_druid(record, context)
-
-  accumulator << transform_values(context, 'wr_id' => literal(generate_sul_shown_at(record, druid)))
+each_record do |record, context|
+  context.clipboard[:druid] = generate_druid(record, context)
+  context.clipboard[:manifest] = "https://purl.stanford.edu/#{context.clipboard[:druid]}/iiif/manifest"
+  context.clipboard[:iiif_json] = grab_iiif_manifest(context.clipboard[:manifest])
 end
 
-to_field 'agg_is_shown_by' do |record, accumulator, context|
-  druid = generate_druid(record, context)
-  manifest = "https://purl.stanford.edu/#{druid}/iiif/manifest"
-  iiif_json = grab_iiif_manifest(manifest)
+# Not using agg_has_view since we have the above
+to_field 'agg_is_shown_at' do |record, accumulator, context|
+  accumulator << transform_values(context, 'wr_id' => literal(generate_sul_shown_at(record, context.clipboard[:druid])))
+end
 
-  if iiif_json.present?
+to_field 'agg_is_shown_by' do |_record, accumulator, context|
+  if context.clipboard[:iiif_json].present?
+    iiif_json = context.clipboard[:iiif_json]
     accumulator << transform_values(context,
                                     'wr_description' => [
                                       extract_mods('/*/mods:physicalDescription/mods:digitalOrigin'),
@@ -23,21 +24,22 @@ to_field 'agg_is_shown_by' do |record, accumulator, context|
                                     'wr_format' => extract_mods('/*/mods:physicalDescription/mods:internetMediaType'),
                                     'wr_has_service' => iiif_sequences_service(iiif_json),
                                     'wr_id' => literal(iiif_sequence_id(iiif_json)),
-                                    'wr_is_referenced_by' => literal(manifest))
+                                    'wr_is_referenced_by' => literal(context.clipboard[:manifest]))
   end
 end
 
-to_field 'agg_preview' do |record, accumulator, context|
-  druid = generate_druid(record, context)
-  manifest = "https://purl.stanford.edu/#{druid}/iiif/manifest"
-  iiif_json = grab_iiif_manifest(manifest)
-
-  if iiif_json.present?
+to_field 'agg_preview' do |_record, accumulator, context|
+  if context.clipboard[:iiif_json].present?
+    iiif_json = context.clipboard[:iiif_json]
     accumulator << transform_values(context,
                                     'wr_format' => extract_mods('/*/mods:physicalDescription/mods:internetMediaType'),
                                     'wr_has_service' => iiif_thumbnail_service(iiif_json),
                                     'wr_id' => literal(iiif_thumbnail_id(iiif_json)),
-                                    'wr_is_referenced_by' => literal(manifest))
+                                    'wr_is_referenced_by' => literal(context.clipboard[:manifest]))
+  else
+    accumulator << transform_values(context,
+                                    'wr_format' => literal('image/jpeg'),
+                                    'wr_id' => literal("https://stacks.stanford.edu/file/druid:#{context.clipboard[:druid]}/preview.jpg"))
   end
 end
 
