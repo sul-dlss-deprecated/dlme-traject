@@ -14,8 +14,6 @@ settings do
   provide 'reader_class_name', 'TrajectPlus::CsvReader'
 end
 
-to_field 'agg_provider', provider
-
 # CHO Required
 to_field 'id', normalize_prefixed_id('emuIRN')
 # Skip over missing titles, revisit if data changes
@@ -51,11 +49,13 @@ to_field 'cho_temporal', column('period'), split('|')
 to_field 'cho_type', column('object_name')
 
 # Agg
+to_field 'agg_provider', provider
+to_field 'agg_data_provider', data_provider
 to_field 'agg_is_shown_at' do |_record, accumulator, context|
   accumulator << transform_values(context,
                                   'wr_id' => [column('url')])
 end
-to_field 'agg_is_shown_by' do |_record, accumulator, context|
+to_field 'agg_preview' do |_record, accumulator, context|
   accumulator << transform_values(context,
-                                  'wr_id' => [column('image')])
+                                  'wr_id' => [column('thumbnail')])
 end
