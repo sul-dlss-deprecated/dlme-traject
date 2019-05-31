@@ -29,7 +29,7 @@ to_field 'cho_edm_type', extract_harvard('/*/dc:type[1]'),
          strip, transform(&:downcase), translation_map('not_found', 'types')
 to_field 'cho_format', extract_harvard('/*/dc:format'), strip
 to_field 'cho_language', extract_harvard('/*/dc:language'),
-          split(' '), first_only, strip, transform(&:downcase), translation_map('not_found', 'iso_639-2')
+         split(' '), first_only, strip, transform(&:downcase), translation_map('not_found', 'iso_639-2')
 to_field 'cho_publisher', extract_harvard('/*/dc:publisher'), strip
 to_field 'cho_relation', extract_harvard('/*/dc:relation'), strip
 to_field 'cho_subject', extract_harvard('/*/dc:subject'), strip
