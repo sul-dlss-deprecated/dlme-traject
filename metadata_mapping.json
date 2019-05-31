@@ -282,5 +282,19 @@
       "agg_data_provider": "British Library. India Office Records and Private Papers",
       "inst_id": "qnl"
     }
+  },
+  {
+    "trajects": [
+      "harvard_ihp_config.rb"
+    ],
+    "paths": [
+      "harvard/islamic-heritage-project"
+    ],
+    "extension": ".xml",
+    "settings": {
+      "agg_provider": "Harvard University Libraries",
+      "agg_data_provider": "Harvard University Libraries",
+      "inst_id": "harvard"
+    }
   }
 ]
