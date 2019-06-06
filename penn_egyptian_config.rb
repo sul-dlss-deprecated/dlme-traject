@@ -25,7 +25,7 @@ to_field 'cho_title', column('object_name'), split('|')
 # CHO Other
 to_field 'cho_coverage', column('culture'), split('|')
 to_field 'cho_creator', column('creator')
-to_field 'agg_data_provider', column('curatorial_section'), append('Section, Penn Museum')
+to_field 'agg_data_provider', column('curatorial_section'), append(' Section, Penn Museum')
 to_field 'cho_date', column('date_made')
 to_field 'cho_date', column('date_made_early')
 to_field 'cho_date', column('date_made_late')
@@ -57,5 +57,5 @@ to_field 'agg_is_shown_at' do |_record, accumulator, context|
 end
 to_field 'agg_preview' do |_record, accumulator, context|
   accumulator << transform_values(context,
-                                  'wr_id' => [column('thumbnail')])
+                                  'wr_id' => [column('thumbnail'), gsub('collections/assets/1600', 'collections/assets/300')])
 end
