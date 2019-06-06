@@ -16,10 +16,6 @@ end
 
 # CHO Required
 to_field 'id', normalize_prefixed_id('emuIRN')
-# Skip over missing titles, revisit if data changes
-each_record do |record, context|
-  context.skip!('Missing title') if record['object_name'].nil?
-end
 to_field 'cho_title', column('object_name'), split('|')
 
 # CHO Other
