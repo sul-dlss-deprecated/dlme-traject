@@ -16,9 +16,10 @@ end
 
 # Cho Required
 to_field 'id', extract_harvard_identifier, strip
-to_field 'cho_title', extract_harvard('/*/dc:title'), strip
+to_field 'cho_title', extract_harvard('/*/dc:title'), strip, first_only
 
 # Cho Other
+to_field 'cho_alternative', extract_harvard('/*/dc:title[last()]'), strip
 to_field 'cho_contributor', extract_harvard('/*/dc:contributor'), strip
 to_field 'cho_coverage', extract_harvard('/*/dc:coverage'), strip
 to_field 'cho_creator', extract_harvard('/*/dc:creator'), strip
