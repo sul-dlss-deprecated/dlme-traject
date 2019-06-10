@@ -280,8 +280,8 @@
     ],
     "extension": ".xml",
     "settings": {
-      "agg_provider": "Harvard University Libraries",
-      "agg_data_provider": "Harvard University Libraries",
+      "agg_provider": "Harvard University Library",
+      "agg_data_provider": "Harvard University's Libraries and Museums",
       "inst_id": "harvard"
     }
   },
