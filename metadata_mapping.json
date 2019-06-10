@@ -284,5 +284,19 @@
       "agg_data_provider": "Harvard University Libraries",
       "inst_id": "harvard"
     }
+  },
+  {
+    "trajects": [
+      "aims_config.rb"
+    ],
+    "paths": [
+      "aims"
+    ],
+    "extension": ".xml",
+    "settings": {
+      "agg_provider": "The American Institute for Maghrib Studies",
+      "agg_data_provider": "The American Institute for Maghrib Studies",
+      "inst_id": "aims"
+    }
   }
 ]
