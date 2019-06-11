@@ -24,7 +24,7 @@ to_field 'cho_date', extract_aims('pubDate'), strip
 to_field 'cho_dc_rights', literal('Use of content for classroom purposes
                                   and on other non-profit educational websites is granted (and encouraged) with proper citation.')
 to_field 'cho_description', extract_itunes('summary'), strip
-to_field 'cho_edm_type', literal('Audio')
+to_field 'cho_edm_type', literal('Sound Recording')
 to_field 'cho_extent', extract_itunes('duration'), strip
 to_field 'cho_subject', extract_itunes('image')
 
