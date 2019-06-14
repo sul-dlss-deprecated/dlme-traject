@@ -16,6 +16,7 @@ settings do
   provide 'reader_class_name', 'TrajectPlus::XmlReader'
 end
 
+# Cho Required
 to_field 'id', lambda { |_record, accumulator, context|
   bare_id = default_identifier(context)
   accumulator << identifier_with_prefix(context, bare_id)
@@ -32,13 +33,9 @@ to_field 'agg_is_shown_at' do |_record, accumulator, context|
   accumulator << transform_values(context,
                                   'wr_id' => [extract_tei("#{ms_desc}/#{ms_id}/tei:altIdentifier[@type='resource']/tei:idno")])
 end
-to_field 'agg_is_shown_by' do |_record, accumulator, context|
+to_field 'agg_preview' do |record, accumulator, context|
   accumulator << transform_values(context,
-                                  'wr_id' => [penn_image_uri(penn_web_image_query)])
-end
-to_field 'agg_preview' do |_record, accumulator, context|
-  accumulator << transform_values(context,
-                                  'wr_id' => [penn_image_uri(penn_thumbnail_image_query)])
+                                  'wr_id' => [penn_thumbnail])
 end
 to_field 'cho_edm_type', literal('Text')
 
