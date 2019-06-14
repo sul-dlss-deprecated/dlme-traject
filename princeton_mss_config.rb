@@ -17,15 +17,19 @@ to_field 'id', extract_json('.identifier'), strip
 to_field 'cho_title', extract_json('.title'), strip
 
 # Cho Other
+to_field 'cho_alternate', extract_json('.cho_alternate'), strip
 to_field 'cho_creator', extract_json('.author'), strip
 to_field 'cho_contributor', extract_json('contributor'), strip
 to_field 'cho_date', extract_json('.date'), strip
+to_field 'cho_dc_rights', literal('https://rbsc.princeton.edu/services/imaging-publication-services')
 to_field 'cho_description', extract_json('.description'), strip
 to_field 'cho_description', extract_json('.contents'), strip
+to_field 'cho_description', extract_json('.binding_note'), strip
 to_field 'cho_edm_type', literal('Text')
 to_field 'cho_extent', extract_json('.extent'), strip
-# to_field 'cho_identifier' extract_json('.source metadata identifier'), strip
-# to_field 'cho_identifier' extract_json('.local identifier'), strip
+to_field 'cho_identifier', extract_json('.source_metadata_identifier'), strip
+to_field 'cho_identifier', extract_json('.local_identifier'), strip
+to_field 'cho_identifier', extract_json('.alternate_identifier'), strip
 to_field 'cho_language', extract_json('.language'), strip
 to_field 'cho_provenance', extract_json('.provenance'), strip
 to_field 'cho_publisher', extract_json('.publisher'), strip
