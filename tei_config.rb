@@ -33,7 +33,7 @@ to_field 'agg_is_shown_at' do |_record, accumulator, context|
   accumulator << transform_values(context,
                                   'wr_id' => [extract_tei("#{ms_desc}/#{ms_id}/tei:altIdentifier[@type='resource']/tei:idno")])
 end
-to_field 'agg_preview' do |record, accumulator, context|
+to_field 'agg_preview' do |_record, accumulator, context|
   accumulator << transform_values(context,
                                   'wr_id' => [penn_thumbnail])
 end
