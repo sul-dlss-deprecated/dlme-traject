@@ -312,5 +312,19 @@
       "agg_data_provider": "The American Institute for Maghrib Studies",
       "inst_id": "aims"
     }
+  },
+  {
+    "trajects": [
+      "tei_config.rb"
+    ],
+    "paths": [
+      "penn/openn"
+    ],
+    "extension": ".xml",
+    "settings": {
+      "agg_provider": "Penn",
+      "agg_data_provider": "Penn",
+      "inst_id": "penn"
+    }
   }
 ]
