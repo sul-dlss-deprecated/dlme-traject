@@ -43,7 +43,10 @@ to_field 'cho_edm_type', literal('Text')
 
 ms_contents = 'tei:msContents'
 to_field 'cho_description', extract_tei("#{ms_desc}/#{ms_contents}/tei:summary")
-to_field 'cho_language', main_language, transform(&:downcase), gsub(' (other)', ''), translation_map('not_found', 'languages', 'marc_languages', 'iso_639-2')
+to_field 'cho_language', main_language, transform(&:downcase), gsub(' (other)', ''), translation_map('not_found',
+                                                                                                     'languages',
+                                                                                                     'marc_languages',
+                                                                                                     'iso_639-2')
 to_field 'cho_language', other_languages, transform(&:downcase), translation_map('not_found', 'languages', 'marc_languages', 'iso_639-2')
 
 ms_item = 'tei:msItem'
