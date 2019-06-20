@@ -31,18 +31,23 @@ ms_id = 'tei:msIdentifier'
 to_field 'cho_identifier', extract_tei("#{ms_desc}/#{ms_id}/tei:idno[@type='call-number']")
 to_field 'agg_is_shown_at' do |_record, accumulator, context|
   accumulator << transform_values(context,
-                                  'wr_id' => [extract_tei("#{ms_desc}/#{ms_id}/tei:altIdentifier[@type='resource']/tei:idno")])
+                                  'wr_id' => [extract_tei("#{ms_desc}/#{ms_id}/tei:altIdentifier[@type='openn-url']/tei:idno")])
 end
 to_field 'agg_preview' do |_record, accumulator, context|
-  accumulator << transform_values(context,
-                                  'wr_id' => [penn_thumbnail])
+  accumulator << transform_values(
+    context,
+    'wr_id' => [penn_thumbnail]
+  )
 end
 to_field 'cho_edm_type', literal('Text')
 
 ms_contents = 'tei:msContents'
 to_field 'cho_description', extract_tei("#{ms_desc}/#{ms_contents}/tei:summary")
-to_field 'cho_language', main_language, transform(&:downcase), translation_map('not_found', 'languages', 'marc_languages')
-to_field 'cho_language', other_languages, transform(&:downcase), translation_map('not_found', 'languages', 'marc_languages')
+to_field 'cho_language', main_language, transform(&:downcase), gsub(' (other)', ''), translation_map('not_found',
+                                                                                                     'languages',
+                                                                                                     'marc_languages',
+                                                                                                     'iso_639-2')
+to_field 'cho_language', other_languages, transform(&:downcase), translation_map('not_found', 'languages', 'marc_languages', 'iso_639-2')
 
 ms_item = 'tei:msItem'
 to_field 'cho_title', extract_tei("#{ms_desc}/#{ms_contents}/#{ms_item}/tei:title")
