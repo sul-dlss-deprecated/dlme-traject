@@ -50,7 +50,7 @@ to_field 'cho_language', main_language, transform(&:downcase), gsub(' (other)', 
 to_field 'cho_language', other_languages, transform(&:downcase), translation_map('not_found', 'languages', 'marc_languages', 'iso_639-2')
 
 ms_item = 'tei:msItem'
-to_field 'cho_title', extract_tei("#{ms_desc}/#{ms_contents}/#{ms_item}/tei:title")
+to_field 'cho_title', extract_tei("#{ms_desc}/#{ms_contents}/#{ms_item}/tei:title[1]")
 to_field 'cho_creator', extract_tei("#{ms_desc}/#{ms_contents}/#{ms_item}/tei:author")
 
 ms_origin = 'tei:history/tei:origin'
