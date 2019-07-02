@@ -296,5 +296,19 @@
       "agg_data_provider": "Harvard University's Libraries and Museums",
       "inst_id": "harvard"
     }
+  },
+  {
+    "trajects": [
+      "aub_config.rb"
+    ],
+    "paths": [
+      "aub"
+    ],
+    "extension": ".xml",
+    "settings": {
+      "agg_provider": "American University of Beirut",
+      "agg_data_provider": "American University of Beirut",
+      "inst_id": "aub"
+    }
   }
 ]
