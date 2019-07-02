@@ -33,7 +33,6 @@ to_field 'cho_language', extract_oai('dc:language'), split(';'),
 to_field 'cho_publisher', literal('Dar al-Adab')
 to_field 'cho_subject', extract_oai('dc:subject'), strip
 
-
 # Agg
 to_field 'agg_data_provider', data_provider
 to_field 'agg_is_shown_at' do |_record, accumulator, context|
