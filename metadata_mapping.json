@@ -301,7 +301,7 @@
   },
   {
     "trajects": [
-      "aub_config.rb"
+      "aub_aladab_config.rb"
     ],
     "paths": [
       "aub"
@@ -314,7 +314,7 @@
     }
   },
   {
-    "trajects":[  
+    "trajects":[
       "aims_config.rb"
     ],
     "paths": [
