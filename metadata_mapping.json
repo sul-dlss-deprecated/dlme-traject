@@ -301,6 +301,20 @@
   },
   {
     "trajects": [
+      "aub_config.rb"
+    ],
+    "paths": [
+      "aub"
+    ],
+    "extension": ".xml",
+    "settings": {
+      "agg_provider": "American University of Beirut",
+      "agg_data_provider": "American University of Beirut",
+      "inst_id": "aub"
+    }
+  },
+  {
+    "trajects":[  
       "aims_config.rb"
     ],
     "paths": [
