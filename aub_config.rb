@@ -15,10 +15,6 @@ end
 
 # Cho Required
 to_field 'id', extract_oai_identifier, strip
-# Skip missing titles for now, reharvest and check later. AUB will add titles in future.
-each_record do |record, context|
-  context.skip!('Missing title') if record['object_name'].nil?
-end
 to_field 'cho_title', extract_oai('dc:title'), strip
 
 # Cho Other
