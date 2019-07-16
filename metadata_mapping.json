@@ -314,7 +314,7 @@
     }
   },
   {
-    "trajects":[  
+    "trajects":[
       "aims_config.rb"
     ],
     "paths": [
@@ -382,6 +382,20 @@
       "agg_provider": "University of Pennsylvania Libraries",
       "agg_data_provider": "Philadelphia Museum of Art",
       "inst_id": "penn"
+    }
+  },
+  {
+    "trajects": [
+      "cambridge_config.rb"
+    ],
+    "paths": [
+      "cambridge"
+    ],
+    "extension": ".xml",
+    "settings": {
+      "agg_provider": "Cambridge University Library",
+      "agg_data_provider": "Cambridge University Library",
+      "inst_id": "cambridge"
     }
   }
 ]
