@@ -27,7 +27,6 @@ profile_desc = '/*/tei:teiHeader/tei:profileDesc/tei:textClass'
 pub_stmt = '/*/tei:teiHeader/tei:fileDesc/tei:publicationStmt'
 support_desc = 'tei:supportDesc[@material="paper"]'
 facsimile = '/*/tei:facsimile'
-digit = '\d'
 
 # Cho Required
 to_field 'id', lambda { |_record, accumulator, context|
@@ -52,20 +51,20 @@ to_field 'cho_language', other_languages, transform(&:downcase), translation_map
 to_field 'cho_provenance', extract_tei("#{ms_desc}/tei:history/tei:provenance")
 to_field 'cho_publisher', extract_tei("#{pub_stmt}/tei:publisher"), strip
 to_field 'cho_spatial', extract_tei("#{ms_desc}/#{ms_origin}/tei:origPlace")
+to_field 'cho_subject', extract_tei("#{profile_desc}/tei:keywords[@n='form/genre']/tei:term")
+to_field 'cho_subject', extract_tei("#{profile_desc}/tei:keywords[@n='subjects']/tei:term")
 
 # Agg
 to_field 'agg_data_provider', data_provider
 to_field 'agg_is_shown_at' do |_record, accumulator, context|
   accumulator << transform_values(context,
                                   'wr_id' => [extract_tei("#{facsimile}/tei:graphic/@url"),
-                                                         gsub('http://cudl.lib.cam.ac.uk/content/images/', 'https://cudl.lib.cam.ac.uk/view/'),
-                                                         gsub('-000-0000', '/'),
-                                                         gsub('_files/8/0_0.jpg', '')]
-                                )
+                                              gsub('http://cudl.lib.cam.ac.uk/content/images/', 'https://cudl.lib.cam.ac.uk/view/'),
+                                              gsub('-000-0000', '/'),
+                                              gsub('_files/8/0_0.jpg', '')])
 end
 to_field 'agg_provider', provider
 to_field 'agg_preview' do |_record, accumulator, context|
   accumulator << transform_values(context,
-                                  'wr_id' => [extract_tei("#{facsimile}/tei:graphic/@url"), gsub('http://', 'https://image01.')]
-                                )
+                                  'wr_id' => [extract_tei("#{facsimile}/tei:graphic/@url"), gsub('http://', 'https://image01.')])
 end
