@@ -43,11 +43,16 @@ to_field 'cho_description', extract_tei("#{ms_desc}/#{ms_contents}/tei:summary")
 to_field 'cho_edm_type', literal('Text')
 to_field 'cho_extent', extract_tei("#{ms_desc}/#{obj_desc}/#{support_desc}/tei:extent")
 to_field 'cho_identifier', extract_tei("#{ms_desc}/#{ms_id}/tei:idno[@type='call-number']"), strip
-to_field 'cho_language', main_language, transform(&:downcase), gsub(' (other)', ''), translation_map('not_found',
+to_field 'cho_language', extract_tei("#{ms_desc}/#{ms_contents}/#{ms_item}/tei:textLang/@mainLang"), transform(&:downcase), translation_map('not_found',
                                                                                                      'languages',
                                                                                                      'marc_languages',
-                                                                                                     'iso_639-2')
-to_field 'cho_language', other_languages, transform(&:downcase), translation_map('not_found', 'languages', 'marc_languages', 'iso_639-2')
+                                                                                                     'iso_639-2',
+                                                                                                     'iso_639-3')
+to_field 'cho_language', extract_tei("#{ms_desc}/#{ms_contents}/#{ms_item}/tei:textLang/@otherLangs"), split(' '), transform(&:downcase), translation_map('not_found',
+                                                                                                     'languages',
+                                                                                                     'marc_languages',
+                                                                                                     'iso_639-2',
+                                                                                                     'iso_639-3')
 to_field 'cho_provenance', extract_tei("#{ms_desc}/tei:history/tei:provenance")
 to_field 'cho_publisher', extract_tei("#{pub_stmt}/tei:publisher"), strip
 to_field 'cho_spatial', extract_tei("#{ms_desc}/#{ms_origin}/tei:origPlace")
