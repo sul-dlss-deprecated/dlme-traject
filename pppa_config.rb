@@ -24,7 +24,7 @@ to_field 'cho_date', column('Date')
 to_field 'cho_description', column('Description')
 to_field 'cho_edm_type', literal('Image')
 to_field 'cho_identifier', column('Resource-URL')
-to_field 'cho_rights', literal("The PPPA operates according to the principles of
+to_field 'cho_dc_rights', literal("The PPPA operates according to the principles of
                                'fair use'. According to fair use principles, an author
                                may make limited use of another author's work without
                                asking for permission. Fair use is based on the belief
