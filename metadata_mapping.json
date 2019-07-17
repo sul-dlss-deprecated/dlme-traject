@@ -1,5 +1,19 @@
 [
-   {
+  {
+    "trajects": [
+      "pppa_config.rb"
+    ],
+    "paths": [
+      "palestine-posters"
+    ],
+    "extension": ".csv",
+    "settings": {
+      "agg_provider": "Palestine Poster Project Archive",
+      "agg_data_provider": "Palestine Poster Project Archive",
+      "inst_id": "pppa"
+    }
+  },
+  {
     "trajects": [
       "mods_config.rb",
       "stanford_mods_config.rb"
