@@ -26,7 +26,7 @@ to_field 'id', extract_json('.objectID'), lambda { |_record, accumulator, contex
 to_field 'cho_format', extract_json('.objectName')
 to_field 'cho_creator', generate_creator
 to_field 'cho_spatial', extract_json('.city'), transform(&:presence)
-to_field 'cho_has_type', extract_json('.classification')
+to_field 'cho_type', extract_json('.classification')
 to_field 'cho_spatial', extract_json('.country'), transform(&:presence)
 to_field 'cho_spatial', extract_json('.county'), transform(&:presence)
 to_field 'cho_provenance', extract_json('.creditLine')

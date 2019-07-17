@@ -46,7 +46,7 @@ to_field 'cho_edm_type', marc_type_to_edm
 to_field 'cho_extent', extract_marc('300a', separator: nil, trim_punctuation: true)
 to_field 'cho_format', marc_formats
 # to_field 'cho_has_part', ?
-to_field 'cho_has_type', extract_marc('651a', trim_punctuation: true)
+to_field 'cho_type', extract_marc('651a', trim_punctuation: true)
 to_field 'cho_is_part_of', extract_marc('440a:490a:800abcdt:400abcd:810abcdt:410abcd:811acdeft:411acdef:830adfgklmnoprst:760ast')
 to_field 'cho_medium', extract_marc('300b', trim_punctuation: true)
 # fo_field 'cho_provenance', ?

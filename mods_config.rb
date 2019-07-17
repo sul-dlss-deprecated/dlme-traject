@@ -63,7 +63,7 @@ to_field 'cho_edm_type', extract_mods('/*/mods:typeOfResource[1]'),
 to_field 'cho_extent', extract_mods('/*/mods:physicalDescription/mods:extent')
 to_field 'cho_format', extract_mods('/*/mods:physicalDescription/mods:form')
 to_field 'cho_has_part', generate_relation('/*/mods:relatedItem[@type="constituent"]')
-to_field 'cho_has_type', extract_mods('/*/mods:genre')
+to_field 'cho_type', extract_mods('/*/mods:genre')
 to_field 'cho_is_part_of', generate_relation('/*/mods:relatedItem[@type="host"]')
 to_field 'cho_is_part_of', generate_relation('/*/mods:relatedItem[@type="series"]')
 to_field 'cho_publisher', extract_mods('/*/mods:originInfo/mods:publisher')
