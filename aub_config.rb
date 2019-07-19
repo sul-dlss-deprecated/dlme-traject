@@ -29,7 +29,7 @@ to_field 'cho_edm_type', extract_oai('dc:type'),
          split(';'), strip, transform(&:downcase), translation_map('not_found', 'types')
 to_field 'cho_is_part_of', extract_oai('dc:source'), strip
 to_field 'cho_language', extract_oai('dc:language'), split(';'),
-         split(','), strip, transform(&:downcase), translation_map('not_found', 'languages', 'auc-languages-errors', 'iso_639-1')
+         split(','), strip, transform(&:downcase), translation_map('not_found', 'languages', 'iso_639-1', 'iso_639-2')
 to_field 'cho_publisher', literal('Dar al-Adab')
 to_field 'cho_subject', extract_oai('dc:subject'), strip
 
