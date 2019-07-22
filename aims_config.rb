@@ -16,17 +16,17 @@ end
 
 # CHO Required
 to_field 'id', extract_aims('guid'), strip
-to_field 'cho_title', extract_itunes('title'), strip
+to_field 'cho_title', extract_aims('title'), strip
 
 # CHO Other
-to_field 'cho_creator', extract_itunes('author'), strip
+to_field 'cho_creator', extract_aims('author'), strip
 to_field 'cho_date', extract_aims('pubDate'), strip
 to_field 'cho_dc_rights', literal('Use of content for classroom purposes
                                   and on other non-profit educational websites is granted (and encouraged) with proper citation.')
-to_field 'cho_description', extract_itunes('summary'), strip
+to_field 'cho_description', extract_aims('summary'), strip
 to_field 'cho_edm_type', literal('Sound Recording')
-to_field 'cho_extent', extract_itunes('duration'), strip
-to_field 'cho_subject', extract_itunes('image')
+to_field 'cho_extent', extract_aims('duration'), strip
+to_field 'cho_subject', extract_aims('image')
 
 # Agg
 to_field 'agg_provider', provider
