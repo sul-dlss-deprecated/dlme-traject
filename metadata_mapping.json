@@ -315,7 +315,22 @@
   },
   {
     "trajects": [
-      "aub_config.rb"
+      "aub_common_config.rb",
+      "aub_aladab_config.rb"
+    ],
+    "paths": [
+      "aub/aladab"
+    ],
+    "extension": ".xml",
+    "settings": {
+      "agg_provider": "American University of Beirut",
+      "agg_data_provider": "American University of Beirut",
+      "inst_id": "aub/aladab"
+    }
+  },
+  {
+    "trajects": [
+      "aub_common_config.rb"
     ],
     "paths": [
       "aub"
