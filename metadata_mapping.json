@@ -411,5 +411,19 @@
       "agg_data_provider": "Cambridge University Library",
       "inst_id": "cambridge"
     }
+  },
+  {
+    "trajects": [
+      "michigan_config.rb"
+    ],
+    "paths": [
+      "michigan"
+    ],
+    "extension": ".xml",
+    "settings": {
+      "agg_provider": "University of Michigan",
+      "agg_data_provider": "University of Michigan",
+      "inst_id": "michigan"
+    }
   }
 ]
