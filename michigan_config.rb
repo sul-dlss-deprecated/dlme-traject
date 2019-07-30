@@ -1,0 +1,62 @@
+# frozen_string_literal: true
+
+require 'traject_plus'
+require 'dlme_json_resource_writer'
+require 'macros/dlme'
+require 'macros/oai'
+require 'macros/michigan'
+
+extend Macros::DLME
+extend Macros::Michigan
+extend Macros::OAI
+extend TrajectPlus::Macros
+extend TrajectPlus::Macros::Xml
+
+settings do
+  provide 'writer_class_name', 'DlmeJsonResourceWriter'
+  provide 'reader_class_name', 'TrajectPlus::XmlReader'
+end
+
+# Cho Required
+to_field 'id', extract_xpath("//controlfield[@tag='001']"), strip
+to_field 'cho_title', extract_xpath("//datafield[@tag='245']/subfield[@code='a']")
+
+# Cho Other
+to_field 'cho_creator', extract_xpath("//datafield[@tag='100']/subfield[@code='a']")
+to_field 'cho_date', extract_xpath("//datafield[@tag='260']"), strip
+to_field 'cho_description', extract_xpath("//datafield[@tag='300']"), strip
+to_field 'cho_description', extract_xpath("//datafield[@tag='500']"), strip
+to_field 'cho_description', extract_xpath("//datafield[@tag='510']"), strip
+to_field 'cho_description', extract_xpath("//datafield[@tag='520']"), strip
+to_field 'cho_dc_rights', literal('Public Domain')
+to_field 'cho_edm_type', literal('Text')
+to_field 'cho_language', extract_xpath("//controlfield[@tag='008']"),
+         strip,
+         transform(&:to_s),
+         transform(&:downcase),
+         gsub(' d', ''),
+         split(' '),
+         last_only,
+         gsub('||', ''),
+         translation_map('not_found', 'marc_languages', 'iso_639-2')
+to_field 'cho_subject', extract_xpath("//datafield[@tag='650']"), strip
+to_field 'cho_same_as', extract_xpath("//controlfield[@tag='001']"), strip, prepend('https://catalog.hathitrust.org/Record/')
+
+# Agg
+to_field 'agg_data_provider', data_provider
+to_field 'agg_is_shown_at' do |_record, accumulator, context|
+  accumulator << transform_values(
+    context,
+    'wr_id' => [extract_xpath("//controlfield[@tag='001']"), strip, prepend('https://search.lib.umich.edu/catalog/record/')]
+  )
+end
+to_field 'agg_preview' do |_record, accumulator, context|
+  accumulator << transform_values(
+    context,
+    'wr_id' => [extract_xpath("//datafield[@tag='974']/subfield[@code='u']"),
+                strip,
+                prepend('https://babel.hathitrust.org/cgi/imgsrv/image?id='),
+                append(';seq=4;size=25;rotation=0')]
+  )
+end
+to_field 'agg_provider', provider
