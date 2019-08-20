@@ -20,14 +20,17 @@ end
 # Cho Required
 to_field 'id', extract_xpath("//controlfield[@tag='001']"), strip
 to_field 'cho_title', extract_xpath("//datafield[@tag='245']/subfield[@code='a']")
+to_field 'cho_title', extract_xpath("//datafield[@tag='880']/subfield[contains(text(),'245-03/')]/../subfield[@code='a']"), strip
+to_field 'cho_title', extract_xpath("//datafield[@tag='880']/subfield[contains(text(),'240-02/')]/../subfield[@code='a']"), strip
 
 # Cho Other
 to_field 'cho_creator', extract_xpath("//datafield[@tag='100']/subfield[@code='a']")
+to_field 'cho_creator', extract_xpath("//datafield[@tag='880']/subfield[contains(text(),'100-01/')]/../subfield[@code='a']"), strip
 to_field 'cho_date', extract_xpath("//datafield[@tag='260']"), strip
 to_field 'cho_description', extract_xpath("//datafield[@tag='300']"), strip
-to_field 'cho_description', extract_xpath("//datafield[@tag='500']"), strip
-to_field 'cho_description', extract_xpath("//datafield[@tag='510']"), strip
 to_field 'cho_description', extract_xpath("//datafield[@tag='520']"), strip
+to_field 'cho_description', extract_xpath("//datafield[@tag='500']"), strip, gsub("Special Collections Library,", "Special Collections Research Center")
+to_field 'cho_description', extract_xpath("//datafield[@tag='510']"), strip
 to_field 'cho_dc_rights', literal('Public Domain')
 to_field 'cho_edm_type', literal('Text')
 to_field 'cho_language', extract_xpath("//controlfield[@tag='008']"),
@@ -56,7 +59,7 @@ to_field 'agg_preview' do |_record, accumulator, context|
     'wr_id' => [extract_xpath("//datafield[@tag='974']/subfield[@code='u']"),
                 strip,
                 prepend('https://babel.hathitrust.org/cgi/imgsrv/image?id='),
-                append(';seq=4;size=25;rotation=0')]
+                append(';seq=7;size=25;rotation=0')]
   )
 end
 to_field 'agg_provider', provider
