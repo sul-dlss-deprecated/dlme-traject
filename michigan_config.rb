@@ -29,7 +29,9 @@ to_field 'cho_creator', extract_xpath("//datafield[@tag='880']/subfield[contains
 to_field 'cho_date', extract_xpath("//datafield[@tag='260']"), strip
 to_field 'cho_description', extract_xpath("//datafield[@tag='300']"), strip
 to_field 'cho_description', extract_xpath("//datafield[@tag='520']"), strip
-to_field 'cho_description', extract_xpath("//datafield[@tag='500']"), strip, gsub("Special Collections Library,", "Special Collections Research Center")
+to_field 'cho_description', extract_xpath("//datafield[@tag='500']"),
+         strip,
+         gsub('Special Collections Library,', 'Special Collections Research Center')
 to_field 'cho_description', extract_xpath("//datafield[@tag='510']"), strip
 to_field 'cho_dc_rights', literal('Public Domain')
 to_field 'cho_edm_type', literal('Text')
