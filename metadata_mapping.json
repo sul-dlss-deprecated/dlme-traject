@@ -161,12 +161,13 @@
   },
   {
     "trajects": [
-      "mods_config.rb"
+      "princeton_mss_config.rb"
     ],
     "paths": [
-      "princeton/movie-posters"
+      "princeton/princeton_mss",
+      "princeton/princeton_ymdi"
     ],
-    "extension": ".mods",
+    "extension": ".json",
     "settings": {
       "agg_provider": "Princeton University Library",
       "agg_data_provider": "Princeton University Library",
@@ -175,10 +176,10 @@
   },
   {
     "trajects": [
-      "princeton_mss_config.rb"
+      "princeton_movie_config.rb"
     ],
     "paths": [
-      "princeton/islamic-manuscripts"
+      "princeton/princeton-movie-posters"
     ],
     "extension": ".json",
     "settings": {
