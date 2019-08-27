@@ -164,7 +164,22 @@
       "princeton_mss_config.rb"
     ],
     "paths": [
-      "princeton"
+      "princeton/princeton_mss",
+      "princeton/princeton_ymdi"
+    ],
+    "extension": ".json",
+    "settings": {
+      "agg_provider": "Princeton University Library",
+      "agg_data_provider": "Princeton University Library",
+      "inst_id": "princeton"
+    }
+  },
+  {
+    "trajects": [
+      "princeton_movie_config.rb"
+    ],
+    "paths": [
+      "princeton/princeton-movie-posters"
     ],
     "extension": ".json",
     "settings": {
