@@ -426,5 +426,19 @@
       "agg_data_provider": "University of Michigan",
       "inst_id": "michigan"
     }
+  },
+  {
+    "trajects": [
+      "bodleian_config.rb"
+    ],
+    "paths": [
+      "bodleian"
+    ],
+    "extension": ".json",
+    "settings": {
+      "agg_provider": "Bodleian Libraries",
+      "agg_data_provider": "Bodleian Libraries",
+      "inst_id": "bodleian"
+    }
   }
 ]
