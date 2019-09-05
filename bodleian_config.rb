@@ -17,7 +17,7 @@ to_field 'id', extract_json('.thumbnail'),
          strip,
          gsub('/full/256,/0/default.jpg', ''),
          gsub('https://iiif.bodleian.ox.ac.uk/iiif/image/', '')
-to_field 'cho_title', extract_json('.title'), strip
+to_field 'cho_title', extract_json('.title'), strip, default('Untitled Item')
 
 # Cho Other
 to_field 'cho_creator', extract_json('.author'), strip
