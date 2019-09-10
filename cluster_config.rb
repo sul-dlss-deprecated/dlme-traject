@@ -20,7 +20,6 @@ to_field 'cho_title', extract_json('.title'), strip
 to_field 'cho_creator', extract_json('.creator'), strip
 to_field 'cho_contributor', extract_json('.contributor'), strip
 to_field 'cho_date', extract_json('.date'), strip
-# to_field 'cho_dc_rights', literal('Photo: © Bodleian Libraries, University of Oxford, Terms of use: http://digital.bodleian.ox.ac.uk/terms.html')
 to_field 'cho_description', extract_json('.description'), strip
 to_field 'cho_edm_type', literal('Dataset')
 to_field 'cho_language', literal('English')
