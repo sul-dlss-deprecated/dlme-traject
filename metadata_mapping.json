@@ -455,5 +455,19 @@
       "agg_data_provider": "Bodleian Libraries",
       "inst_id": "bodleian"
     }
+  },
+  {
+    "trajects": [
+      "cluster_config.rb"
+    ],
+    "paths": [
+      "cluster"
+    ],
+    "extension": ".json",
+    "settings": {
+      "agg_provider": "CLUSTER",
+      "agg_data_provider": "CLUSTER",
+      "inst_id": "cluster"
+    }
   }
 ]
