@@ -1,5 +1,7 @@
 # DLME Traject Configs
 
+[![CircleCI](https://circleci.com/gh/sul-dlss/dlme-traject.svg?style=svg)](https://circleci.com/gh/sul-dlss/dlme-traject 'CI Build status')
+
 This repository contains config files for different DLME data sources. The config files are written at the highest level possible which, in most cases, is that of the institution. Occasionally collection specific config files need to be written in the case that there is significant variation across collection' metadata from the same institution.
 
 To learn about the core functionality of traject and traject plus see https://github.com/traject/traject and https://github.com/sul-dlss/traject_plus.
@@ -9,7 +11,7 @@ To run the traject config files to transform data, see the https://github.com/su
 ## Configuration Examples
 
 The example configurations below are generic and considered kick-off examples in order to
-provide a basis for getting started writing your own configurations. 
+provide a basis for getting started writing your own configurations.
 
 ### Source data formats
 
