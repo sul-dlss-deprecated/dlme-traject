@@ -11,9 +11,8 @@ jobs:
           name: Install Bundler
           command: gem install bundler
 
-      # Which version of bundler?
       - run:
-          name: Which bundler?
+          name: Which version of bundler?
           command: bundle -v
 
       # Restore bundle cache
@@ -31,6 +30,7 @@ jobs:
           key: rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
+
       - run:
           name: Check styles using rubocop
           command: bundle exec rubocop
