@@ -60,20 +60,6 @@
   },
   {
     "trajects": [
-      "tei_config.rb"
-    ],
-    "paths": [
-      "penn/schoenberg"
-    ],
-    "extension": ".xml",
-    "settings": {
-      "agg_provider": "University of Pennsylvania Libraries",
-      "agg_data_provider": "University of Pennsylvania. Rare Book & Manuscript Library",
-      "inst_id": "penn"
-    }
-  },
-  {
-    "trajects": [
       "met_config.rb"
     ],
     "paths": [
@@ -272,7 +258,7 @@
   },
   {
     "trajects": [
-      "tei_config.rb"
+      "openn_config.rb"
     ],
     "paths": [
       "penn/openn/penn-0001",
@@ -287,7 +273,7 @@
   },
   {
     "trajects": [
-      "tei_config.rb"
+      "openn_config.rb"
     ],
     "paths": [
       "penn/openn/columbia-0032"
@@ -301,7 +287,7 @@
   },
   {
     "trajects": [
-      "tei_config.rb"
+      "openn_config.rb"
     ],
     "paths": [
       "penn/openn/free-library-philadelphia-0023"
@@ -315,7 +301,7 @@
   },
   {
     "trajects": [
-      "tei_config.rb"
+      "openn_config.rb"
     ],
     "paths": [
       "penn/openn/philadelphia-museum-art-0031"
