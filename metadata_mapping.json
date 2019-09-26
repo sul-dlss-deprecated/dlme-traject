@@ -65,6 +65,7 @@
     "paths": [
       "penn/schoenberg"
     ],
+    "extension": ".xml",
     "settings": {
       "agg_provider": "University of Pennsylvania Libraries",
       "agg_data_provider": "University of Pennsylvania. Rare Book & Manuscript Library",
@@ -149,6 +150,7 @@
     "paths": [
       "harvard/maps"
     ],
+    "extension": ".xml",
     "settings": {
       "agg_provider": "Harvard University Library",
       "agg_data_provider": "Harvard University. Center for Geographic Analysis",
