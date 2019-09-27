@@ -69,3 +69,6 @@ to_field 'agg_is_shown_at' do |_record, accumulator, context|
   end
   accumulator << values
 end
+
+to_field 'agg_provider_country', provider_country
+to_field 'agg_data_provider_country', data_provider_country

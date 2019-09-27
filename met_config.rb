@@ -62,3 +62,6 @@ to_field 'cho_spatial', extract_json('.subregion'), transform(&:presence)
 to_field 'cho_title', extract_json('.title')
 to_field 'cho_edm_type', edm_type
 to_field 'cho_type', literal('Image')
+
+to_field 'agg_provider_country', provider_country
+to_field 'agg_data_provider_country', data_provider_country

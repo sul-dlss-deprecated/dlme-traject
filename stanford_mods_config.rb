@@ -66,3 +66,6 @@ end
 # STANFORD Specific
 to_field 'cho_type', extract_mods('/*/mods:extension/rdf:RDF/rdf:Description/dc:format')
 to_field 'cho_type', extract_mods('/*/mods:extension/rdf:RDF/rdf:Description/dc:type')
+
+to_field 'agg_provider_country', provider_country
+to_field 'agg_data_provider_country', data_provider_country

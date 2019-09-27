@@ -74,3 +74,6 @@ to_field 'agg_preview' do |_record, accumulator, context|
   accumulator << transform_values(context,
                                   'wr_id' => [extract_tei("#{facsimile}/tei:graphic/@url"), gsub('http://', 'https://image01.')])
 end
+
+to_field 'agg_provider_country', provider_country
+to_field 'agg_data_provider_country', data_provider_country
