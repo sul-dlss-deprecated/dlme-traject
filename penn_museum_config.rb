@@ -27,7 +27,7 @@ to_field 'agg_data_provider', column('curatorial_section'), append(' Section, Pe
 to_field 'cho_date', column('date_made')
 to_field 'cho_date', column('date_made_early')
 to_field 'cho_date', column('date_made_late')
-to_field 'cho_date_norm', penn_museum_date_range
+to_field 'cho_date_range_norm', penn_museum_date_range
 to_field 'cho_description', column('description')
 to_field 'cho_description', column('technique'), split('|')
 to_field 'cho_edm_type', literal('Image')
