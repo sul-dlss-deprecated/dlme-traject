@@ -12,6 +12,10 @@
       "agg_provider_country": "United States of America",
       "agg_data_provider": "Palestine Poster Project Archive",
       "agg_data_provider_country": "United States of America",
+      "agg_provider_ar": "أرشيف ملصق فلسطين",
+      "agg_provider_country_ar": "الولايات المتحدة الامريكيه",
+      "agg_data_provider_ar": "أرشيف ملصق فلسطين",
+      "agg_data_provider_country_ar": "الولايات المتحدة الامريكيه",
       "inst_id": "pppa"
     }
   },
@@ -29,6 +33,10 @@
       "agg_provider_country": "United States of America",
       "agg_data_provider": "Stanford Libraries",
       "agg_data_provider_country": "United States of America",
+      "agg_provider_ar": "مكتبات ستانفورد",
+      "agg_provider_country_ar": "الولايات المتحدة الامريكيه",
+      "agg_data_provider_ar": "مكتبات ستانفورد",
+      "agg_data_provider_country_ar": "الولايات المتحدة الامريكيه",
       "inst_id": "stanford"
     }
   },
@@ -46,6 +54,10 @@
       "agg_provider_country": "France",
       "agg_data_provider": "Institut dominicain d’etudes orientales",
       "agg_data_provider_country": "Egypt",
+      "agg_provider_ar": "مكتبة فرنسا الوطنية",
+      "agg_provider_country_ar": "فرنسا",
+      "agg_data_provider_ar": "معهد الدومينيك للدراسات الشرقية",
+      "agg_data_provider_country_ar": "مصر",
       "inst_id": "ideo"
     }
   },
@@ -63,6 +75,10 @@
       "agg_provider_country": "France",
       "agg_data_provider": "Institut français d’archéologie orientale",
       "agg_data_provider_country": "Egypt",
+      "agg_provider_ar": "مكتبة فرنسا الوطنية",
+      "agg_provider_country_ar": "فرنسا",
+      "agg_data_provider_ar": "المعهد الفرنسي للآثار الشرقية",
+      "agg_data_provider_country_ar": "مصر",
       "inst_id": "ifao"
     }
   },
@@ -79,6 +95,10 @@
       "agg_provider_country": "United States of America",
       "agg_data_provider": "Metropolitan Museum of Art",
       "agg_data_provider_country": "United States of America",
+      "agg_provider_ar": "متحف متروبوليتان للفنون",
+      "agg_provider_country_ar": "الولايات المتحدة الامريكيه",
+      "agg_data_provider_ar": "متحف متروبوليتان للفنون",
+      "agg_data_provider_country_ar": "الولايات المتحدة الامريكيه",
       "inst_id": "met"
     }
   },
@@ -96,6 +116,10 @@
       "agg_provider_country": "United States of America",
       "agg_data_provider": "Princeton University Library",
       "agg_data_provider_country": "United States of America",
+      "agg_provider_ar": "مكتبة جامعة برينستون",
+      "agg_provider_country_ar": "الولايات المتحدة الامريكيه",
+      "agg_data_provider_ar": "مكتبة جامعة برينستون",
+      "agg_data_provider_country_ar": "الولايات المتحدة الامريكيه",
       "inst_id": "princeton"
     }
   },
@@ -112,6 +136,10 @@
       "agg_provider_country": "United States of America",
       "agg_data_provider": "Princeton University Library",
       "agg_data_provider_country": "United States of America",
+      "agg_provider_ar": "مكتبة جامعة برينستون",
+      "agg_provider_country_ar": "الولايات المتحدة الامريكيه",
+      "agg_data_provider_ar": "مكتبة جامعة برينستون",
+      "agg_data_provider_country_ar": "الولايات المتحدة الامريكيه",
       "inst_id": "princeton"
     }
   },
@@ -128,6 +156,10 @@
       "agg_provider_country": "United States of America",
       "agg_data_provider": "American Numismatic Society",
       "agg_data_provider_country": "United States of America",
+      "agg_provider_ar": "الجمعية الأمريكية لهواة جمع العملات",
+      "agg_provider_country_ar": "الولايات المتحدة الامريكيه",
+      "agg_data_provider_ar": "الجمعية الأمريكية لهواة جمع العملات",
+      "agg_data_provider_country_ar": "الولايات المتحدة الامريكيه",
       "inst_id": "ans"
     }
   },
@@ -145,6 +177,10 @@
       "agg_provider_country": "United States of America",
       "agg_data_provider": "Penn Museum",
       "agg_data_provider_country": "United States of America",
+      "agg_provider_ar": "متحف بنسلفانيا",
+      "agg_provider_country_ar": "الولايات المتحدة الامريكيه",
+      "agg_data_provider_ar": "متحف بنسلفانيا",
+      "agg_data_provider_country_ar": "الولايات المتحدة الامريكيه",
       "inst_id": "penn_museum"
     }
   },
@@ -161,6 +197,10 @@
       "agg_provider_country": "United States of America",
       "agg_data_provider": "Harvard University. Center for Geographic Analysis",
       "agg_data_provider_country": "United States of America",
+      "agg_provider_ar": "مكتبة جامعة هارفارد",
+      "agg_provider_country_ar": "الولايات المتحدة الامريكيه",
+      "agg_data_provider_ar": "جامعة هارفارد، مركز التحليل الجغرافي",
+      "agg_data_provider_country_ar": "الولايات المتحدة الامريكيه",
       "inst_id": "harvard"
     }
   },
@@ -177,6 +217,10 @@
       "agg_provider_country": "United States of America",
       "agg_data_provider": "University of Pennsylvania Libraries",
       "agg_data_provider_country": "United States of America",
+      "agg_provider_ar": "مكتبات جامعة بنسلفانيا",
+      "agg_provider_country_ar": "الولايات المتحدة الامريكيه",
+      "agg_data_provider_ar": "مكتبات جامعة بنسلفانيا",
+      "agg_data_provider_country_ar": "الولايات المتحدة الامريكيه",
       "inst_id": "penn_marc"
     }
   },
@@ -193,6 +237,10 @@
       "agg_provider_country": "Turkey",
       "agg_data_provider": "Sakip Sabanci Museum",
       "agg_data_provider_country": "Turkey",
+      "agg_provider_ar": "متحف صاقب صابونجي",
+      "agg_provider_country_ar": "تركيا",
+      "agg_data_provider_ar": "متحف صاقب صابونجي",
+      "agg_data_provider_country_ar": "تركيا",
       "inst_id": "sakip-sabanci"
     }
   },
@@ -209,6 +257,10 @@
       "agg_provider_country": "Egypt",
       "agg_data_provider": "American University in Cairo",
       "agg_data_provider_country": "Egypt",
+      "agg_provider_ar": "الجامعة الأمريكية في القاهرة",
+      "agg_provider_country_ar": "مصر",
+      "agg_data_provider_ar": "الجامعة الأمريكية في القاهرة",
+      "agg_data_provider_country_ar": "مصر",
       "inst_id": "auc"
     }
   },
@@ -225,6 +277,10 @@
       "agg_provider_country": "Qatar",
       "agg_data_provider": "British Library. India Office Records and Private Papers",
       "agg_data_provider_country": "United Kingdom",
+      "agg_provider_ar": "مكتبة قطر الوطنية",
+      "agg_provider_country_ar": "قطر",
+      "agg_data_provider_ar": "المكتبة البريطانية، سجلات مكتب الهند والأوراق الخاصة",
+      "agg_data_provider_country_ar": "المملكة المتحدة",
       "inst_id": "qnl"
     }
   },
@@ -241,6 +297,10 @@
       "agg_provider_country": "United States of America",
       "agg_data_provider": "Harvard University's Libraries and Museums",
       "agg_data_provider_country": "United States of America",
+      "agg_provider_ar": "مكتبة جامعة هارفارد",
+      "agg_provider_country_ar": "الولايات المتحدة الامريكيه",
+      "agg_data_provider_ar": "مكتبات ومتاحف جامعة هارفارد",
+      "agg_data_provider_country_ar": "الولايات المتحدة الامريكيه",
       "inst_id": "harvard"
     }
   },
@@ -258,6 +318,10 @@
       "agg_provider_country": "Lebanon",
       "agg_data_provider": "American University of Beirut",
       "agg_data_provider_country": "Lebanon",
+      "agg_provider_ar": "الجامعة الأمريكية في بيروت",
+      "agg_provider_country_ar": "لبنان",
+      "agg_data_provider_ar": "الجامعة الأمريكية في بيروت",
+      "agg_data_provider_country_ar": "لبنان",
       "inst_id": "aub/aladab"
     }
   },
@@ -274,6 +338,10 @@
       "agg_provider_country": "Lebanon",
       "agg_data_provider": "American University of Beirut",
       "agg_data_provider_country": "Lebanon",
+      "agg_provider_ar": "الجامعة الأمريكية في بيروت",
+      "agg_provider_country_ar": "لبنان",
+      "agg_data_provider_ar": "الجامعة الأمريكية في بيروت",
+      "agg_data_provider_country_ar": "لبنان",
       "inst_id": "aub"
     }
   },
@@ -290,6 +358,10 @@
       "agg_provider_country": "Morocco",
       "agg_data_provider": "The American Institute for Maghrib Studies",
       "agg_data_provider_country": "Morocco",
+      "agg_provider_ar": "المعهد الأمريكي لدراسات المغرب",
+      "agg_provider_country_ar": "المغرب",
+      "agg_data_provider_ar": "المعهد الأمريكي لدراسات المغرب",
+      "agg_data_provider_country_ar": "المغرب",
       "inst_id": "aims"
     }
   },
@@ -307,6 +379,10 @@
       "agg_provider_country": "United States of America",
       "agg_data_provider": "University of Pennsylvania Libraries",
       "agg_data_provider_country": "United States of America",
+      "agg_provider_ar": "مكتبات جامعة بنسلفانيا",
+      "agg_provider_country_ar": "الولايات المتحدة الامريكيه",
+      "agg_data_provider_ar": "مكتبات جامعة بنسلفانيا",
+      "agg_data_provider_country_ar": "الولايات المتحدة الامريكيه",
       "inst_id": "penn"
     }
   },
@@ -323,6 +399,10 @@
       "agg_provider_country": "United States of America",
       "agg_data_provider": "Columbia University, Rare Book & Manuscript Library",
       "agg_data_provider_country": "United States of America",
+      "agg_provider_ar": "مكتبات جامعة بنسلفانيا",
+      "agg_provider_country_ar": "الولايات المتحدة الامريكيه",
+      "agg_data_provider_ar": "جامعة كولومبيا، مكتبة الكتب والمخطوطات النادرة",
+      "agg_data_provider_country_ar": "الولايات المتحدة الامريكيه",
       "inst_id": "penn"
     }
   },
@@ -339,6 +419,10 @@
       "agg_provider_country": "United States of America",
       "agg_data_provider": "Free Library of Philadelphia, Special Collections",
       "agg_data_provider_country": "United States of America",
+      "agg_provider_ar": "مكتبات جامعة بنسلفانيا",
+      "agg_provider_country_ar": "الولايات المتحدة الامريكيه",
+      "agg_data_provider_ar": "مكتبة فيلادلفيا المجانية، المجموعات الخاصة",
+      "agg_data_provider_country_ar": "الولايات المتحدة الامريكيه",
       "inst_id": "penn"
     }
   },
@@ -355,6 +439,10 @@
       "agg_provider_country": "United States of America",
       "agg_data_provider": "Philadelphia Museum of Art",
       "agg_data_provider_country": "United States of America",
+      "agg_provider_ar": "مكتبات جامعة بنسلفانيا",
+      "agg_provider_country_ar": "الولايات المتحدة الامريكيه",
+      "agg_data_provider_ar": "متحف فيلادلفيا للفنون",
+      "agg_data_provider_country_ar": "الولايات المتحدة الامريكيه",
       "inst_id": "penn"
     }
   },
@@ -371,6 +459,10 @@
       "agg_provider_country": "United Kingdom",
       "agg_data_provider": "Cambridge University Library",
       "agg_data_provider_country": "United Kingdom",
+      "agg_provider_ar": "مكتبة جامعة كامبريدج",
+      "agg_provider_country_ar": "المملكة المتحدة",
+      "agg_data_provider_ar": "مكتبة جامعة كامبريدج",
+      "agg_data_provider_country_ar": "المملكة المتحدة",
       "inst_id": "cambridge"
     }
   },
@@ -387,6 +479,10 @@
       "agg_provider_country": "United States of America",
       "agg_data_provider": "University of Michigan",
       "agg_data_provider_country": "United States of America",
+      "agg_provider_ar": "جامعة ميشيغان",
+      "agg_provider_country_ar": "الولايات المتحدة الامريكيه",
+      "agg_data_provider_ar": "جامعة ميشيغان",
+      "agg_data_provider_country_ar": "الولايات المتحدة الامريكيه",
       "inst_id": "michigan"
     }
   },
@@ -403,6 +499,10 @@
       "agg_provider_country": "United Kingdom",
       "agg_data_provider": "Bodleian Libraries",
       "agg_data_provider_country": "United Kingdom",
+      "agg_provider_ar": "مكتبات بودليان",
+      "agg_provider_country_ar": "المملكة المتحدة",
+      "agg_data_provider_ar": "مكتبات بودليان",
+      "agg_data_provider_country_ar": "المملكة المتحدة",
       "inst_id": "bodleian"
     }
   },
@@ -419,6 +519,10 @@
       "agg_provider_country": "Egypt",
       "agg_data_provider": "CLUSTER",
       "agg_data_provider_country": "Egypt",
+      "agg_provider_ar": "مختبر عمران القاهرة للتصميم والدراسات",
+      "agg_provider_country_ar": "مصر",
+      "agg_data_provider_ar": "مختبر عمران القاهرة للتصميم والدراسات",
+      "agg_data_provider_country_ar": "مصر",
       "inst_id": "cluster"
     }
   }
