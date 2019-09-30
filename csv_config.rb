@@ -19,3 +19,6 @@ to_field 'cho_title', column('Object Name')
 # Aggregation Object(s)
 to_field 'agg_data_provider', data_provider
 to_field 'agg_provider', provider
+
+to_field 'agg_provider_country', provider_country
+to_field 'agg_data_provider_country', data_provider_country

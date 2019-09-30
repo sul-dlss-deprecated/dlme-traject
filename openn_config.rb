@@ -69,3 +69,6 @@ to_field 'agg_provider', provider
 to_field 'agg_data_provider', data_provider
 
 to_field 'agg_edm_rights', public_domain
+
+to_field 'agg_provider_country', provider_country
+to_field 'agg_data_provider_country', data_provider_country

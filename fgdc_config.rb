@@ -87,6 +87,9 @@ to_field 'agg_is_shown_at' do |record, accumulator, context|
                                   'wr_dc_rights' => extract_fgdc('/*/idinfo/useconst'))
 end
 
+to_field 'agg_provider_country', provider_country
+to_field 'agg_data_provider_country', data_provider_country
+
 # Not using agg_is_shown_at
 # Not using agg_is_shown_by
 # Not using agg_preview

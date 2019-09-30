@@ -65,3 +65,6 @@ to_field 'agg_preview' do |_record, accumulator, context|
   )
 end
 to_field 'agg_provider', provider
+
+to_field 'agg_provider_country', provider_country
+to_field 'agg_data_provider_country', data_provider_country
