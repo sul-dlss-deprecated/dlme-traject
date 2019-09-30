@@ -20,6 +20,7 @@ to_field 'cho_title', extract_json('.title'), strip
 to_field 'cho_contributor', extract_json('.director'), strip
 to_field 'cho_contributor', extract_json('.rendered_actors'), strip
 to_field 'cho_date', extract_json('.date_created'), strip
+to_field 'cho_date_range_norm', extract_json('.date_created'), strip
 to_field 'cho_dc_rights', literal('https://rbsc.princeton.edu/services/imaging-publication-services')
 to_field 'cho_description', extract_json('.member_of_collections'), strip
 to_field 'cho_edm_type', literal('Image')

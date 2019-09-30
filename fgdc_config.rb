@@ -30,6 +30,7 @@ to_field 'cho_coverage', extract_fgdc('/*/dataqual/lineage/srcinfo/srctime/timei
 to_field 'cho_coverage', extract_fgdc('/*/dataqual/lineage/srcinfo/srctime/timeinfo/sngdate/caldate')
 # to_field 'cho_date', extract_fgdc('/*/dataqual/lineage/srcinfo/srccite/citeinfo/pubdate')
 to_field 'cho_date', extract_fgdc('/*/idinfo/citation/citeinfo/pubdate')
+to_field 'cho_date_range_norm', extract_fgdc('/*/idinfo/citation/citeinfo/pubdate')
 # to_field 'cho_dc_rights', extract_fgdc('/*/idinfo/accconst')
 to_field 'cho_dc_rights', extract_fgdc('/*/idinfo/useconst')
 to_field 'cho_description', extract_fgdc('/*/idinfo/descript/abstract')
