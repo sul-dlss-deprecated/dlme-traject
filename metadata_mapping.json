@@ -9,7 +9,9 @@
     "extension": ".csv",
     "settings": {
       "agg_provider": "Palestine Poster Project Archive",
+      "agg_provider_country": "United States of America",
       "agg_data_provider": "Palestine Poster Project Archive",
+      "agg_data_provider_country": "United States of America",
       "inst_id": "pppa"
     }
   },
@@ -24,7 +26,9 @@
     "extension": ".mods",
     "settings": {
       "agg_provider": "Stanford Libraries",
+      "agg_provider_country": "United States of America",
       "agg_data_provider": "Stanford Libraries",
+      "agg_data_provider_country": "United States of America",
       "inst_id": "stanford"
     }
   },
@@ -39,7 +43,9 @@
     "extension": ".xml",
     "settings": {
       "agg_provider": "Bibliothèque nationale de France",
+      "agg_provider_country": "France",
       "agg_data_provider": "Institut dominicain d’etudes orientales",
+      "agg_data_provider_country": "Egypt",
       "inst_id": "ideo"
     }
   },
@@ -54,7 +60,9 @@
     "extension": ".xml",
     "settings": {
       "agg_provider": "Bibliothèque nationale de France",
+      "agg_provider_country": "France",
       "agg_data_provider": "Institut français d’archéologie orientale",
+      "agg_data_provider_country": "Egypt",
       "inst_id": "ifao"
     }
   },
@@ -68,6 +76,9 @@
     "extension": ".json",
     "settings": {
       "agg_provider": "Metropolitan Museum of Art",
+      "agg_provider_country": "United States of America",
+      "agg_data_provider": "Metropolitan Museum of Art",
+      "agg_data_provider_country": "United States of America",
       "inst_id": "met"
     }
   },
@@ -82,7 +93,9 @@
     "extension": ".json",
     "settings": {
       "agg_provider": "Princeton University Library",
+      "agg_provider_country": "United States of America",
       "agg_data_provider": "Princeton University Library",
+      "agg_data_provider_country": "United States of America",
       "inst_id": "princeton"
     }
   },
@@ -96,7 +109,9 @@
     "extension": ".json",
     "settings": {
       "agg_provider": "Princeton University Library",
+      "agg_provider_country": "United States of America",
       "agg_data_provider": "Princeton University Library",
+      "agg_data_provider_country": "United States of America",
       "inst_id": "princeton"
     }
   },
@@ -110,7 +125,9 @@
     "extension": ".csv",
     "settings": {
       "agg_provider": "American Numismatic Society",
+      "agg_provider_country": "United States of America",
       "agg_data_provider": "American Numismatic Society",
+      "agg_data_provider_country": "United States of America",
       "inst_id": "ans"
     }
   },
@@ -125,7 +142,9 @@
     "extension": ".csv",
     "settings": {
       "agg_provider": "Penn Museum",
+      "agg_provider_country": "United States of America",
       "agg_data_provider": "Penn Museum",
+      "agg_data_provider_country": "United States of America",
       "inst_id": "penn_museum"
     }
   },
@@ -139,7 +158,9 @@
     "extension": ".xml",
     "settings": {
       "agg_provider": "Harvard University Library",
+      "agg_provider_country": "United States of America",
       "agg_data_provider": "Harvard University. Center for Geographic Analysis",
+      "agg_data_provider_country": "United States of America",
       "inst_id": "harvard"
     }
   },
@@ -153,7 +174,9 @@
     "extension": ".mrc",
     "settings": {
       "agg_provider": "University of Pennsylvania Libraries",
+      "agg_provider_country": "United States of America",
       "agg_data_provider": "University of Pennsylvania Libraries",
+      "agg_data_provider_country": "United States of America",
       "inst_id": "penn_marc"
     }
   },
@@ -167,7 +190,9 @@
     "extension": ".xml",
     "settings": {
       "agg_provider": "Sakip Sabanci Museum",
+      "agg_provider_country": "Turkey",
       "agg_data_provider": "Sakip Sabanci Museum",
+      "agg_data_provider_country": "Turkey",
       "inst_id": "sakip-sabanci"
     }
   },
@@ -181,7 +206,9 @@
     "extension": ".xml",
     "settings": {
       "agg_provider": "American University in Cairo",
+      "agg_provider_country": "Egypt",
       "agg_data_provider": "American University in Cairo",
+      "agg_data_provider_country": "Egypt",
       "inst_id": "auc"
     }
   },
@@ -195,7 +222,9 @@
     "extension": ".xml",
     "settings": {
       "agg_provider": "Qatar National Library",
+      "agg_provider_country": "Qatar",
       "agg_data_provider": "British Library. India Office Records and Private Papers",
+      "agg_data_provider_country": "United Kingdom",
       "inst_id": "qnl"
     }
   },
@@ -209,7 +238,9 @@
     "extension": ".xml",
     "settings": {
       "agg_provider": "Harvard University Library",
+      "agg_provider_country": "United States of America",
       "agg_data_provider": "Harvard University's Libraries and Museums",
+      "agg_data_provider_country": "United States of America",
       "inst_id": "harvard"
     }
   },
@@ -224,7 +255,9 @@
     "extension": ".xml",
     "settings": {
       "agg_provider": "American University of Beirut",
+      "agg_provider_country": "Lebanon",
       "agg_data_provider": "American University of Beirut",
+      "agg_data_provider_country": "Lebanon",
       "inst_id": "aub/aladab"
     }
   },
@@ -238,7 +271,9 @@
     "extension": ".xml",
     "settings": {
       "agg_provider": "American University of Beirut",
+      "agg_provider_country": "Lebanon",
       "agg_data_provider": "American University of Beirut",
+      "agg_data_provider_country": "Lebanon",
       "inst_id": "aub"
     }
   },
@@ -252,7 +287,9 @@
     "extension": ".xml",
     "settings": {
       "agg_provider": "The American Institute for Maghrib Studies",
+      "agg_provider_country": "Morocco",
       "agg_data_provider": "The American Institute for Maghrib Studies",
+      "agg_data_provider_country": "Morocco",
       "inst_id": "aims"
     }
   },
@@ -267,7 +304,9 @@
     "extension": ".xml",
     "settings": {
       "agg_provider": "University of Pennsylvania Libraries",
+      "agg_provider_country": "United States of America",
       "agg_data_provider": "University of Pennsylvania Libraries",
+      "agg_data_provider_country": "United States of America",
       "inst_id": "penn"
     }
   },
@@ -281,7 +320,9 @@
     "extension": ".xml",
     "settings": {
       "agg_provider": "University of Pennsylvania Libraries",
+      "agg_provider_country": "United States of America",
       "agg_data_provider": "Columbia University, Rare Book & Manuscript Library",
+      "agg_data_provider_country": "United States of America",
       "inst_id": "penn"
     }
   },
@@ -295,7 +336,9 @@
     "extension": ".xml",
     "settings": {
       "agg_provider": "University of Pennsylvania Libraries",
+      "agg_provider_country": "United States of America",
       "agg_data_provider": "Free Library of Philadelphia, Special Collections",
+      "agg_data_provider_country": "United States of America",
       "inst_id": "penn"
     }
   },
@@ -309,7 +352,9 @@
     "extension": ".xml",
     "settings": {
       "agg_provider": "University of Pennsylvania Libraries",
+      "agg_provider_country": "United States of America",
       "agg_data_provider": "Philadelphia Museum of Art",
+      "agg_data_provider_country": "United States of America",
       "inst_id": "penn"
     }
   },
@@ -323,7 +368,9 @@
     "extension": ".xml",
     "settings": {
       "agg_provider": "Cambridge University Library",
+      "agg_provider_country": "United Kingdom",
       "agg_data_provider": "Cambridge University Library",
+      "agg_data_provider_country": "United Kingdom",
       "inst_id": "cambridge"
     }
   },
@@ -337,7 +384,9 @@
     "extension": ".xml",
     "settings": {
       "agg_provider": "University of Michigan",
+      "agg_provider_country": "United States of America",
       "agg_data_provider": "University of Michigan",
+      "agg_data_provider_country": "United States of America",
       "inst_id": "michigan"
     }
   },
@@ -351,7 +400,9 @@
     "extension": ".json",
     "settings": {
       "agg_provider": "Bodleian Libraries",
+      "agg_provider_country": "United Kingdom",
       "agg_data_provider": "Bodleian Libraries",
+      "agg_data_provider_country": "United Kingdom",
       "inst_id": "bodleian"
     }
   },
@@ -365,7 +416,9 @@
     "extension": ".json",
     "settings": {
       "agg_provider": "CLUSTER",
+      "agg_provider_country": "Egypt",
       "agg_data_provider": "CLUSTER",
+      "agg_data_provider_country": "Egypt",
       "inst_id": "cluster"
     }
   }
