@@ -4,9 +4,11 @@ require 'traject_plus'
 require 'dlme_json_resource_writer'
 require 'macros/dlme'
 require 'macros/tei'
+require 'macros/normalize_language'
 
 extend Macros::DLME
 extend Macros::Tei
+extend Macros::NormalizeLanguage
 extend TrajectPlus::Macros
 extend TrajectPlus::Macros::Xml
 extend TrajectPlus::Macros::Tei
@@ -39,11 +41,12 @@ to_field 'cho_edm_type', literal('Text')
 
 ms_contents = 'tei:msContents'
 to_field 'cho_description', extract_tei("#{ms_desc}/#{ms_contents}/tei:summary")
-to_field 'cho_language', main_language, transform(&:downcase), gsub(' (other)', ''), translation_map('not_found',
-                                                                                                     'languages',
-                                                                                                     'marc_languages',
-                                                                                                     'iso_639-2')
-to_field 'cho_language', other_languages, transform(&:downcase), translation_map('not_found', 'languages', 'marc_languages', 'iso_639-2')
+to_field 'cho_language', extract_tei('/*/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msContents/tei:textLang/@mainLang'), normalize_language #, gsub(' (other)', ''),
+# to_field 'cho_language', main_language, transform(&:downcase), gsub(' (other)', ''), translation_map('not_found',
+                                                                                                     # 'languages',
+                                                                                                     # 'marc_languages',
+                                                                                                     # 'iso_639-2')
+# to_field 'cho_language', other_languages, transform(&:downcase), translation_map('not_found', 'languages', 'marc_languages', 'iso_639-2')
 
 ms_item = 'tei:msItem'
 to_field 'cho_title', extract_tei("#{ms_desc}/#{ms_contents}/#{ms_item}/tei:title[1]")
