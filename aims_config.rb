@@ -3,9 +3,11 @@
 require 'traject_plus'
 require 'dlme_json_resource_writer'
 require 'macros/dlme'
+require 'macros/date_parsing'
 require 'macros/aims'
 
 extend Macros::DLME
+extend Macros::DateParsing
 extend TrajectPlus::Macros
 extend Macros::AIMS
 
@@ -21,7 +23,7 @@ to_field 'cho_title', extract_aims('title'), strip
 # CHO Other
 to_field 'cho_creator', extract_aims('author'), strip
 to_field 'cho_date', extract_aims('pubDate'), strip
-to_field 'cho_date_range_norm', extract_aims('pubDate'), strip
+to_field 'cho_date_range_norm', extract_aims('pubDate'), strip, single_year_from_string
 to_field 'cho_dc_rights', literal('Use of content for classroom purposes
                                   and on other non-profit educational websites is granted (and encouraged) with proper citation.')
 to_field 'cho_description', extract_aims('summary'), strip
