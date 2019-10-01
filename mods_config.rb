@@ -95,9 +95,6 @@ to_field 'cho_type', extract_mods('/*/mods:typeOfResource')
 to_field 'agg_data_provider', data_provider
 to_field 'agg_provider', provider
 
-to_field 'agg_provider_country', provider_country
-to_field 'agg_data_provider_country', data_provider_country
-
 # agg_dc_rights:,
 # agg_edm_rights:,
 # agg_same_as
