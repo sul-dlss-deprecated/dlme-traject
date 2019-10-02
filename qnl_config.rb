@@ -3,11 +3,13 @@
 require 'traject_plus'
 require 'dlme_json_resource_writer'
 require 'macros/dlme'
+require 'macros/date_parsing'
 require 'macros/qnl'
 
 extend Macros::DLME
-extend Macros::QNL
+extend Macros::DateParsing
 extend TrajectPlus::Macros
+extend Macros::QNL
 
 settings do
   provide 'writer_class_name', 'DlmeJsonResourceWriter'
@@ -22,7 +24,8 @@ to_field 'cho_title', extract_qnl('mods:titleInfo/mods:title')
 to_field 'cho_coverage', extract_qnl('mods:subject/mods:geographic'), strip
 to_field 'cho_creator', extract_qnl('mods:name/mods:namePart'), strip
 to_field 'cho_date', extract_qnl('mods:originInfo/mods:dateIssued'), strip
-to_field 'cho_date_range_norm', extract_qnl('mods:originInfo/mods:dateIssued'), strip
+to_field 'cho_date_range_norm', extract_qnl('mods:originInfo/mods:dateIssued'),
+         strip, gsub('/', '-'), range_array_from_positive_4digits_hyphen
 to_field 'cho_dc_rights', literal('Open Government Licence')
 to_field 'cho_description', extract_qnl('mods:physicalDescription/mods:extent'), strip
 to_field 'cho_edm_type', extract_qnl('mods:typeOfResource'),

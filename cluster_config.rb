@@ -3,7 +3,10 @@
 require 'traject_plus'
 require 'dlme_json_resource_writer'
 require 'macros/dlme'
+require 'macros/date_parsing'
+
 extend Macros::DLME
+extend Macros::DateParsing
 extend TrajectPlus::Macros
 extend TrajectPlus::Macros::JSON
 
@@ -20,7 +23,7 @@ to_field 'cho_title', extract_json('.title'), strip
 to_field 'cho_creator', extract_json('.creator'), strip
 to_field 'cho_contributor', extract_json('.contributor'), strip
 to_field 'cho_date', extract_json('.date'), strip
-to_field 'cho_date_range_norm', extract_json('.date'), strip
+to_field 'cho_date_range_norm', extract_json('.date'), strip, range_array_from_positive_4digits_hyphen
 to_field 'cho_description', extract_json('.description'), strip
 to_field 'cho_edm_type', literal('Dataset')
 to_field 'cho_language', literal('English')

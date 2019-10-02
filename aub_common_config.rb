@@ -3,8 +3,11 @@
 require 'traject_plus'
 require 'dlme_json_resource_writer'
 require 'macros/dlme'
+require 'macros/date_parsing'
 require 'macros/oai'
+
 extend Macros::DLME
+extend Macros::DateParsing
 extend Macros::OAI
 extend TrajectPlus::Macros
 
@@ -23,7 +26,7 @@ to_field 'cho_contributor', extract_oai('dc:contributor'),
 to_field 'cho_creator', extract_oai('dc:creator'),
          strip, split('.')
 to_field 'cho_date', extract_oai('dc:date'), strip
-to_field 'cho_date_range_norm', extract_oai('dc:date'), strip
+to_field 'cho_date_range_norm', extract_oai('dc:date'), strip, range_array_from_positive_4digits_hyphen
 to_field 'cho_description', extract_oai('dc:description[2]'), strip
 to_field 'cho_dc_rights', extract_oai('dc:rights'), strip
 to_field 'cho_edm_type', extract_oai('dc:type'),

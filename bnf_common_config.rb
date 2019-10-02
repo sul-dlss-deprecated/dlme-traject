@@ -3,9 +3,11 @@
 require 'traject_plus'
 require 'dlme_json_resource_writer'
 require 'macros/dlme'
+require 'macros/date_parsing'
 require 'macros/srw'
 
 extend Macros::DLME
+extend Macros::DateParsing
 extend TrajectPlus::Macros
 extend Macros::SRW
 
@@ -23,7 +25,7 @@ to_field 'cho_provenance', literal('This document is part of BnF website \'Bibli
 
 # Cho Other
 to_field 'cho_date', extract_srw('dc:date'), strip
-to_field 'cho_date_range_norm', extract_srw('dc:date'), strip
+to_field 'cho_date_range_norm', extract_srw('dc:date'), strip, range_array_from_positive_4digits_hyphen
 to_field 'cho_description', extract_srw('dc:description'), strip
 to_field 'cho_dc_rights', extract_srw('dc:rights'), strip
 to_field 'cho_format', extract_srw('dc:format'), strip

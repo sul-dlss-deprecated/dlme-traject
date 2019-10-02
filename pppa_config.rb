@@ -3,9 +3,12 @@
 require 'traject_plus'
 require 'dlme_json_resource_writer'
 require 'macros/dlme'
+require 'macros/date_parsing'
 require 'macros/csv'
+
 extend Macros::DLME
 extend Macros::Csv
+extend Macros::DateParsing
 extend TrajectPlus::Macros
 extend TrajectPlus::Macros::Csv
 
@@ -21,7 +24,7 @@ to_field 'cho_title', column('Title')
 # CHO Other
 to_field 'cho_creator', column('Creator')
 to_field 'cho_date', column('Date')
-to_field 'cho_date_range_norm', column('Date')
+to_field 'cho_date_range_norm', column('Date'), range_array_from_positive_4digits_hyphen
 to_field 'cho_description', column('Description')
 to_field 'cho_edm_type', literal('Image')
 to_field 'cho_identifier', column('Resource-URL')
