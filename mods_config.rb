@@ -4,12 +4,14 @@ require 'traject_plus'
 require 'dlme_json_resource_writer'
 require 'macros/dlme'
 require 'macros/mods'
+require 'macros/normalize_type'
 require 'macros/stanford'
 extend Macros::DLME
 extend TrajectPlus::Macros
 extend TrajectPlus::Macros::Xml
 extend TrajectPlus::Macros::Mods
 extend Macros::Mods
+extend Macros::NormalizeType
 extend Macros::IIIF
 extend Macros::Stanford
 
@@ -25,8 +27,8 @@ to_field 'id', generate_mods_id
 to_field 'cho_identifier', extract_mods('/*/mods:identifier')
 to_field 'cho_identifier', extract_mods('/*/mods:recordInfo/mods:recordIdentifier')
 to_field 'cho_identifier', extract_mods('/*/mods:location/mods:holdingSimple/mods:copyInformation/mods:itemIdentifier')
-to_field 'cho_language', normalize_language
-to_field 'cho_language', normalize_script
+to_field 'cho_language', normalize_mods_language
+to_field 'cho_language', normalize_mods_script
 to_field 'cho_title', extract_mods('/*/mods:titleInfo/mods:title')
 to_field 'cho_title', extract_mods('/*/mods:titleInfo/mods:partName')
 to_field 'cho_title', extract_mods('/*/mods:titleInfo/mods:partNumber')
@@ -59,8 +61,7 @@ to_field 'cho_description', extract_mods('/*/mods:location/mods:holdingSimple/mo
 to_field 'cho_description', extract_mods('/*/mods:note')
 to_field 'cho_description', extract_mods('/*/mods:physicalDescription/mods:note')
 to_field 'cho_description', extract_mods('/*/mods:tableOfContents')
-to_field 'cho_edm_type', extract_mods('/*/mods:typeOfResource[1]'),
-         strip, transform(&:downcase), translation_map('not_found', 'types', 'marc-types')
+to_field 'cho_edm_type', extract_mods('/*/mods:typeOfResource[1]'), normalize_type
 to_field 'cho_extent', extract_mods('/*/mods:physicalDescription/mods:extent')
 to_field 'cho_format', extract_mods('/*/mods:physicalDescription/mods:form')
 to_field 'cho_has_part', generate_relation('/*/mods:relatedItem[@type="constituent"]')
