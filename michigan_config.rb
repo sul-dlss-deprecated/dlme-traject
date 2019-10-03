@@ -3,12 +3,14 @@
 require 'traject_plus'
 require 'dlme_json_resource_writer'
 require 'macros/dlme'
-require 'macros/oai'
 require 'macros/michigan'
+require 'macros/oai'
+require 'macros/post_process'
 
 extend Macros::DLME
 extend Macros::Michigan
 extend Macros::OAI
+extend Macros::PostProcess
 extend TrajectPlus::Macros
 extend TrajectPlus::Macros::Xml
 
@@ -19,9 +21,13 @@ end
 
 # Cho Required
 to_field 'id', extract_xpath("//controlfield[@tag='001']"), strip
-to_field 'cho_title', extract_xpath("//datafield[@tag='245']/subfield[@code='a']")
-to_field 'cho_title', extract_xpath("//datafield[@tag='880']/subfield[contains(text(),'245-03/')]/../subfield[@code='a']"), strip
-to_field 'cho_title', extract_xpath("//datafield[@tag='880']/subfield[contains(text(),'240-02/')]/../subfield[@code='a']"), strip
+to_field 'cho_title', extract_xpath("//datafield[@tag='245']/subfield[@code='a']"), lang('en')
+to_field 'cho_title', extract_xpath("//datafield[@tag='880']/subfield[contains(text(),'245-03/')]/../subfield[@code='a']"),
+         strip,
+         lang('ar-Arab')
+to_field 'cho_title', extract_xpath("//datafield[@tag='880']/subfield[contains(text(),'240-02/')]/../subfield[@code='a']"),
+         strip,
+         lang('tr-Arab')
 
 # Cho Other
 to_field 'cho_creator', extract_xpath("//datafield[@tag='100']/subfield[@code='a']")
@@ -69,3 +75,5 @@ to_field 'agg_provider', provider
 
 to_field 'agg_provider_country', provider_country
 to_field 'agg_data_provider_country', data_provider_country
+
+each_record convert_to_language_hash('cho_title')
