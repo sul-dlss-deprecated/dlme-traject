@@ -4,9 +4,11 @@ require 'traject_plus'
 require 'dlme_json_resource_writer'
 require 'macros/dlme'
 require 'macros/oai'
+require 'macros/normalize_type'
 require 'macros/content_dm'
 extend Macros::ContentDm
 extend Macros::DLME
+extend Macros::NormalizeType
 extend Macros::OAI
 extend TrajectPlus::Macros
 
@@ -37,6 +39,7 @@ to_field 'cho_language', extract_oai('dc:language'), split(';'),
 to_field 'cho_publisher', extract_oai('dc:publisher'), strip
 to_field 'cho_relation', extract_oai('dc:relation'), strip
 to_field 'cho_subject', extract_oai('dc:subject'), strip
+to_field 'cho_type', extract_oai('dc:type')
 
 # Agg
 to_field 'agg_data_provider', data_provider
@@ -53,6 +56,11 @@ to_field 'agg_preview' do |_record, accumulator, context|
     'wr_id' => [extract_cdm_preview]
   )
 end
-
 to_field 'agg_provider_country', provider_country
 to_field 'agg_data_provider_country', data_provider_country
+
+# Arabic Agg
+to_field 'agg_data_provider_ar', data_provider_ar
+to_field 'agg_data_provider_country_ar', data_provider_country_ar
+to_field 'agg_provider_ar', provider_ar
+to_field 'agg_provider_country_ar', provider_country_ar

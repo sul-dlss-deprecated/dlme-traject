@@ -95,6 +95,12 @@ to_field 'cho_type', extract_mods('/*/mods:typeOfResource')
 to_field 'agg_data_provider', data_provider
 to_field 'agg_provider', provider
 
+# Arabic Agg
+to_field 'agg_data_provider_ar', data_provider_ar
+to_field 'agg_data_provider_country_ar', data_provider_country_ar
+to_field 'agg_provider_ar', provider_ar
+to_field 'agg_provider_country_ar', provider_country_ar
+
 # agg_dc_rights:,
 # agg_edm_rights:,
 # agg_same_as
