@@ -2,15 +2,18 @@
 
 require 'traject_plus'
 require 'dlme_json_resource_writer'
-require 'macros/dlme'
 require 'macros/csv'
-require 'macros/normalize'
+require 'macros/date_parsing'
+require 'macros/dlme'
+require 'macros/normalize_type'
 require 'macros/post_process'
 
-extend Macros::PostProcess
 extend Macros::DLME
 extend Macros::Csv
-extend Macros::Normalize
+extend Macros::DateParsing
+extend Macros::DLME
+extend Macros::NormalizeType
+extend Macros::PostProcess
 extend TrajectPlus::Macros
 extend TrajectPlus::Macros::Csv
 
