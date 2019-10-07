@@ -7,8 +7,10 @@ require 'dlme_json_resource_writer'
 require 'macros/dlme'
 require 'macros/csv'
 require 'macros/numismatic_csv'
+require 'macros/date_parsing'
 extend Macros::DLME
 extend Macros::Csv
+extend Macros::DateParsing
 extend TrajectPlus::Macros
 extend TrajectPlus::Macros::Csv
 extend Macros::NumismaticCsv
@@ -29,7 +31,7 @@ to_field 'cho_creator', column('Mint')
 to_field 'agg_data_provider', data_provider
 to_field 'cho_date', column('Era')
 to_field 'cho_date', column('Year'), gsub('|', ' - ')
-to_field 'cho_date_range_norm', column('Year'), gsub('|', ' - ')
+to_field 'cho_date_range_norm', american_numismatic_date_range
 to_field 'cho_description', column('Denomination')
 to_field 'cho_description', column('Manufacture')
 to_field 'cho_description', column('Obverse Legend')
