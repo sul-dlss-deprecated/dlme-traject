@@ -6,6 +6,9 @@ require 'macros/dlme'
 require 'macros/mods'
 require 'macros/normalize_type'
 require 'macros/stanford'
+require 'macros/post_process'
+
+extend Macros::PostProcess
 extend Macros::DLME
 extend TrajectPlus::Macros
 extend TrajectPlus::Macros::Xml
@@ -96,11 +99,7 @@ to_field 'cho_type', extract_mods('/*/mods:typeOfResource')
 to_field 'agg_data_provider', data_provider
 to_field 'agg_provider', provider
 
-# Arabic Agg
-to_field 'agg_data_provider_ar', data_provider_ar
-to_field 'agg_data_provider_country_ar', data_provider_country_ar
-to_field 'agg_provider_ar', provider_ar
-to_field 'agg_provider_country_ar', provider_country_ar
+each_record convert_to_language_hash('cho_title')
 
 # agg_dc_rights:,
 # agg_edm_rights:,

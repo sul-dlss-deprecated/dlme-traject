@@ -6,6 +6,9 @@ require 'macros/dlme'
 require 'macros/oai'
 require 'macros/normalize_type'
 require 'macros/content_dm'
+require 'macros/post_process'
+
+extend Macros::PostProcess
 extend Macros::ContentDm
 extend Macros::DLME
 extend Macros::NormalizeType
@@ -59,8 +62,4 @@ end
 to_field 'agg_provider_country', provider_country
 to_field 'agg_data_provider_country', data_provider_country
 
-# Arabic Agg
-to_field 'agg_data_provider_ar', data_provider_ar
-to_field 'agg_data_provider_country_ar', data_provider_country_ar
-to_field 'agg_provider_ar', provider_ar
-to_field 'agg_provider_country_ar', provider_country_ar
+each_record convert_to_language_hash('cho_title')
