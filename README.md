@@ -40,8 +40,10 @@ to_field 'agg_is_shown_at' do |_record, accumulator, context|
   accumulator << transform_values(context,
                                   'wr_id' => [column('thumbnail_url')])
 end
-to_field 'agg_data_provider', data_provider
-to_field 'agg_provider', provider
+to_field 'agg_data_provider', data_provider, lang('en')
+to_field 'agg_data_provider', data_provider_ar, lang('ar-Arab')
+to_field 'agg_provider', provider, lang('en')
+to_field 'agg_provider', provider_ar, lang('ar-Arab')
 ```
 
 ### XML
@@ -71,8 +73,10 @@ to_field 'agg_is_shown_at' do |_record, accumulator, context|
   accumulator << transform_values(context,
                                   'wr_id' => [extract_mods('/*/mods:thumbnail/mods:resource')]
 end
-to_field 'agg_data_provider', data_provider
-to_field 'agg_provider', provider
+to_field 'agg_data_provider', data_provider, lang('en')
+to_field 'agg_data_provider', data_provider_ar, lang('ar-Arab')
+to_field 'agg_provider', provider, lang('en')
+to_field 'agg_provider', provider_ar, lang('ar-Arab')
 ```
 
 #### MODS
@@ -116,8 +120,10 @@ to_field 'cho_temporal', marc_era_facet
 to_field 'cho_title', extract_marc('245', trim_punctuation: true)
 to_field 'cho_type', marc_type_to_edm
 
-to_field 'agg_data_provider', data_provider # set in the settings.yml file
-to_field 'agg_provider', provider # set in the settings.yml file
+to_field 'agg_data_provider', data_provider, lang('en') # set in the settings.yml file
+to_field 'agg_data_provider', data_provider_ar, lang('ar-Arab') # set in the settings.yml file
+to_field 'agg_provider', provider, lang('en') # set in the settings.yml file
+to_field 'agg_provider', provider_ar, lang('ar-Arab') # set in the settings.yml file
 to_field 'agg_has_view' do |_record, accumulator, context|
   accumulator << transform_values(context, 'wr_id' => extract_marc('856u', first: true))
 end
@@ -146,5 +152,6 @@ to_field 'agg_is_shown_at' do |_record, accumulator, context|
   accumulator << transform_values(context,
                                   'wr_id' => [extract_json('.thumbnail.resource')]
 end
-to_field 'agg_data_provider', data_provider
+to_field 'agg_data_provider', data_provider, lang('en')
+to_field 'agg_data_provider', data_provider_ar, lang('ar-Arab')
 ```

@@ -20,9 +20,13 @@ to_field 'id', column('Object ID')
 to_field 'cho_title', column('Object Name')
 
 # Aggregation Object(s)
-to_field 'agg_data_provider', data_provider
-to_field 'agg_provider', provider
-to_field 'agg_provider_country', provider_country
-to_field 'agg_data_provider_country', data_provider_country
+to_field 'agg_data_provider', data_provider, lang('en')
+to_field 'agg_data_provider', data_provider_ar, lang('ar-Arab')
+to_field 'agg_provider', provider, lang('en')
+to_field 'agg_provider', provider_ar, lang('ar-Arab')
+to_field 'agg_provider_country', provider_country, lang('en')
+to_field 'agg_provider_country', provider_country_ar, lang('ar-Arab')
+to_field 'agg_data_provider_country', data_provider_country, lang('en')
+to_field 'agg_data_provider_country', data_provider_country_ar, lang('ar-Arab')
 
-each_record convert_to_language_hash('cho_title')
+each_record convert_to_language_hash('agg_data_provider', 'agg_data_provider_country', 'agg_provider', 'agg_provider_country', 'cho_title')

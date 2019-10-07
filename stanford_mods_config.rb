@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
+require 'macros/dlme'
+require 'macros/post_process'
+
+extend Macros::DLME
 extend Macros::IIIF
+extend Macros::PostProcess
 
 each_record do |record, context|
   context.clipboard[:druid] = generate_druid(record, context)
@@ -67,5 +72,9 @@ end
 to_field 'cho_type', extract_mods('/*/mods:extension/rdf:RDF/rdf:Description/dc:format')
 to_field 'cho_type', extract_mods('/*/mods:extension/rdf:RDF/rdf:Description/dc:type')
 
-to_field 'agg_provider_country', provider_country
-to_field 'agg_data_provider_country', data_provider_country
+to_field 'agg_provider_country', provider_country, lang('en')
+to_field 'agg_provider_country', provider_country_ar, lang('ar-Arab')
+to_field 'agg_data_provider_country', data_provider_country, lang('en')
+to_field 'agg_data_provider_country', data_provider_country_ar, lang('ar-Arab')
+
+each_record convert_to_language_hash('agg_data_provider_country', 'agg_provider_country', 'cho_title')
