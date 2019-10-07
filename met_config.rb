@@ -17,7 +17,8 @@ settings do
   provide 'reader_class_name', 'TrajectPlus::JsonReader'
 end
 
-to_field 'agg_provider', provider
+to_field 'agg_provider', provider, lang('en')
+to_field 'agg_provider', provider_ar, lang('ar-Arab')
 
 # MET Museum
 to_field 'id', extract_json('.objectID'), lambda { |_record, accumulator, context|
@@ -59,7 +60,8 @@ to_field 'cho_source', extract_json('.accessionNumber')
 to_field 'cho_temporal', extract_json('.period'), transform(&:presence)
 to_field 'cho_spatial', extract_json('.region'), transform(&:presence)
 to_field 'cho_temporal', extract_json('reign'), transform(&:presence)
-to_field 'agg_data_provider', data_provider
+to_field 'agg_data_provider', data_provider, lang('en')
+to_field 'agg_data_provider', data_provider_ar, lang('ar-Arab')
 to_field 'cho_dc_rights', extract_json('.rightsAndReproduction'), transform(&:presence)
 to_field 'cho_spatial', extract_json('.river'), transform(&:presence)
 to_field 'cho_spatial', extract_json('.subregion'), transform(&:presence)
@@ -67,7 +69,9 @@ to_field 'cho_title', extract_json('.title')
 to_field 'cho_edm_type', edm_type
 to_field 'cho_type', literal('Image')
 
-to_field 'agg_provider_country', provider_country
-to_field 'agg_data_provider_country', data_provider_country
+to_field 'agg_provider_country', provider_country, lang('en')
+to_field 'agg_provider_country', provider_country_ar, lang('ar-Arab')
+to_field 'agg_data_provider_country', data_provider_country, lang('en')
+to_field 'agg_data_provider_country', data_provider_country_ar, lang('ar-Arab')
 
-each_record convert_to_language_hash('cho_title')
+each_record convert_to_language_hash('agg_data_provider', 'agg_data_provider_country', 'agg_provider', 'agg_provider_country', 'cho_title')
